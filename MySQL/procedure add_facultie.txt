@@ -1,0 +1,12 @@
+USE `trotsa`;
+DROP procedure IF EXISTS `add_facultie`;
+
+DELIMITER $$
+USE `trotsa`$$
+CREATE PROCEDURE `add_facultie` (set_ID_facultie varchar(5), set_name_facultie varchar(10))
+BEGIN
+INSERT INTO `trotsa`.`faculties` (`ID_facultie`, `name_facultie`) VALUES (set_ID_facultie, set_name_facultie);
+END$$
+
+DELIMITER ;
+

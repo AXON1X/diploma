@@ -1,0 +1,12 @@
+USE `trotsa`;
+DROP procedure IF EXISTS `change_name_applicant`;
+
+DELIMITER $$
+USE `trotsa`$$
+CREATE PROCEDURE `change_name_applicant` (ID_applicant int, set_name varchar(10))
+BEGIN
+UPDATE `trotsa`.`applicants` SET `name` = set_name WHERE (`ID_applicants` = ID_applicant);
+END$$
+
+DELIMITER ;
+

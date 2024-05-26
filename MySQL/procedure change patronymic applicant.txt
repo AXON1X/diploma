@@ -1,0 +1,12 @@
+USE `trotsa`;
+DROP procedure IF EXISTS `change_patronymic_applicant`;
+
+DELIMITER $$
+USE `trotsa`$$
+CREATE PROCEDURE `change_patronymic_applicant` (ID_applicant int, set_patronymic varchar(10))
+BEGIN
+UPDATE `trotsa`.`applicants` SET `name` = set_patronymic WHERE (`ID_applicants` = ID_applicant);
+END$$
+
+DELIMITER ;
+
