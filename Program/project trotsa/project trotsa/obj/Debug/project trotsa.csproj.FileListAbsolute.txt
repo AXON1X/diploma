@@ -1,0 +1,48 @@
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\project trotsa.exe.config
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\project trotsa.exe
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\project trotsa.pdb
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\BouncyCastle.Cryptography.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\Google.Protobuf.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Compression.LZ4.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Hash.xxHash.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\MySql.Data.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Buffers.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.IO.Pipelines.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Memory.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Numerics.Vectors.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Text.Encodings.Web.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Text.Json.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.ValueTuple.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\ZstdSharp.dll
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\BouncyCastle.Cryptography.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\Google.Protobuf.pdb
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\Google.Protobuf.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Compression.LZ4.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\K4os.Hash.xxHash.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\MySql.Data.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Buffers.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.IO.Pipelines.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Memory.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Numerics.Vectors.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Text.Encodings.Web.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Text.Json.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.ValueTuple.xml
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.AssemblyReference.cache
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.Form1.resources
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.Properties.Resources.resources
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.GenerateResource.cache
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.CoreCompileInputs.cache
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.CopyComplete
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.exe
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.pdb
