@@ -25,6 +25,8 @@ namespace project_trotsa.JSON
             if(!File.Exists(Directory.GetCurrentDirectory() + "\\save_data\\server_data.json"))
             {
                 File.Create(Directory.GetCurrentDirectory()+ "\\save_data\\server_data.json");
+                StreamWriter writer = new StreamWriter(Directory.GetCurrentDirectory() + "\\save_data\\server_data.json", true);
+                writer.Write("{ \"server\":\"\",\"port\":\"3306\",\"username\":\"root\",\"password\":\"\",\"database\":\"\"}");
             }
 
             if (!File.Exists(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json"))
@@ -41,13 +43,14 @@ namespace project_trotsa.JSON
 
         static public void save_server_data(server_data sd)
         {
-            FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\server_data.json", FileMode.Open);
+            FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\server_data.json", FileMode.Create);
+
             JsonSerializer.Serialize<server_data>(fs, sd);
             fs.Close();
         }
         void save_registar_data(registar rd)
         {
-            FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json", FileMode.Open);
+            FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json", FileMode.Create);
             JsonSerializer.Serialize<registar>(fs, rd);
             fs.Close();
         }
@@ -91,6 +94,25 @@ namespace project_trotsa.JSON
         public string username { get; set; }
         public string password { get; set; }
         public string database { get; set; }
+
+        public bool all_value_filled()
+        {
+            if(server != "" && port != "" && username != ""
+                && password != "" && database != "")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void clear()
+        {
+            this.server = "";
+            this.port = "";
+            this.username = "";
+            this.password = "";
+            this.database = "";
+        }
     }
     struct registar
     {
@@ -101,4 +123,6 @@ namespace project_trotsa.JSON
         public string login { get; set; }
         public string password { get; set; }
     }
+
+
 }

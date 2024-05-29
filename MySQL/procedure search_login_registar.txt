@@ -1,0 +1,12 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `search_login_registar`(login_reg varchar(15)) RETURNS tinyint(1)
+    DETERMINISTIC
+BEGIN
+DECLARE USER_COUNTER INTEGER;
+DECLARE OK BOOL;
+
+select count(*) INTO USER_COUNTER from trotsa.registrars where Login_registrar = login_reg;
+IF (USER_COUNTER = 0) then  SET OK = FALSE;
+ELSEIF (USER_COUNTER = 1) THEN SET OK = TRUE;
+END IF;
+RETURN OK;
+END

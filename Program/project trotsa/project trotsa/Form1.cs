@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using project_trotsa.server;
 using Mysqlx.Expect;
+using System.Diagnostics.Eventing.Reader;
 
 namespace project_trotsa
 {
@@ -38,33 +39,42 @@ namespace project_trotsa
             files_work.check_safe();
             Server_Data = files_work.read_server_data_file();
             fill_server_page();
-            db_obj = new DB(Server_Data);
-            db_obj.open_conn();
-            if(db_obj.get_bool_conn())
+            if (Server_Data.all_value_filled())
             {
-                db_obj.close_conn();
-            }
-            else 
-            {
-                do
+                db_obj = new DB(Server_Data);
+                db_obj.open_conn();
+                if (db_obj.get_bool_conn())
                 {
-                    db_obj.open_conn();
-                    if( db_obj.get_bool_conn())
+                    db_obj.close_conn();
+                }
+                else
+                {
+                    do
                     {
-                        break;
+                        db_obj.open_conn();
+                        if (db_obj.get_bool_conn())
+                        {
+                            break;
+                        }
+                    } while (DialogResult.Retry == MessageBox.Show("Не удалось подключится к базе данных\nПовторить попытку?", "DB", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error));
+                    if (!db_obj.get_bool_conn())
+                    {
+                        tabControl1.SelectedIndex = 1;
+                        OptionsTabPage.SelectedIndex = 1;
+                        MessageBox.Show("Возможно в данных присутствует ошибка или нет подключения к серверу\nобратитесь к вашему системному администратору", "DB", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
-                } while (DialogResult.Retry == MessageBox.Show("Не удалось подключится к базе данных\nПовторить попытку?", "DB", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error));
-                if (!db_obj.get_bool_conn())
-                {
-                    tabControl1.SelectedIndex = 1;
-                    OptionsTabPage.SelectedIndex = 1;
-                    MessageBox.Show("Возможно в данных присутствует ошибка или нет подключения к серверу\nобратитесь к вашему системному администратору", "DB", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
                 }
 
+                OptionsTabPage.DrawItem += new DrawItemEventHandler(OptionsTabPage_DrawItem);
             }
-
-            OptionsTabPage.DrawItem += new DrawItemEventHandler(OptionsTabPage_DrawItem);
+            else
+            {
+                tabControl1.SelectedIndex = 1;
+                OptionsTabPage.SelectedIndex = 1;
+            }
         }
+        
 
         private void OptionsTabPage_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -138,16 +148,10 @@ namespace project_trotsa
             files_work.save_server_data(Server_Data);
             db_obj.reset_str_conn(Server_Data);
 
-            db_obj.open_conn();
-
-            if(db_obj.get_bool_conn())
+            if(DialogResult.OK == MessageBox.Show("Необходима перезагрузка приложения", "UI", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
             {
-                MessageBox.Show("Соединение: успешно", "DB");
-                db_obj.close_conn();
-            }
-            else
-            {
-                MessageBox.Show("Соединение: провалено", "DB");
+                
+                Application.Restart();
             }
         }
 
@@ -164,6 +168,53 @@ namespace project_trotsa
             else
             {
                 MessageBox.Show("Соединение: провалено", "DB");
+            }
+        }
+
+        private void button_authorization_Click(object sender, EventArgs e)
+        {
+            errorProvider_MF.Clear();
+            if(login_EditLine_MF.Text == "")
+            {
+                errorProvider_MF.SetError(login_EditLine_MF, "Введите логин");
+                return;
+            }
+            if(pass_EditLine_MF.Text == "")
+            {
+                errorProvider_MF.SetError(pass_EditLine_MF, "Введите пароль");
+                return;
+            }
+            if (!db_obj.search_login(login_EditLine_MF.Text))
+            {
+                errorProvider_MF.SetError(login_EditLine_MF, "Такого логина не существует");
+            }
+            if(db_obj.authorization(login_EditLine_MF.Text, pass_EditLine_MF.Text))
+            {
+                if(!check_save_registar.Checked)
+                {
+                    login_EditLine_MF.Text = "";
+                    pass_EditLine_MF.Text = "";
+                }
+                
+                this.Hide();
+                registrator_form registrator_Form = new registrator_form();
+                registrator_Form.Show();
+            }
+            else
+            {
+                errorProvider_MF.SetError(pass_EditLine_MF, "Неверный пароль");
+            }
+        }
+
+        private void link_authorizathion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if(panel1.Visible)
+            {
+                panel1.Visible = false;
+            }
+            else
+            {
+                panel1.Visible = true;
             }
         }
     }
