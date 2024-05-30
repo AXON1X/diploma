@@ -19,7 +19,7 @@ namespace project_trotsa
         server_data Server_Data;
         registar registar;
         DB db_obj;
-
+        int authorization_err_count = 0;
 
 
         void fill_server_page()
@@ -32,13 +32,52 @@ namespace project_trotsa
 
             save_server_data.Visible = false;
         }
+        void fill_authorization_panel()
+        {
+            login_EditLine_MF.Text = registar.login;
+            pass_EditLine_MF.Text = registar.password;
+        }
+        void bunning(int counter)
+        {
+            if(counter < 3)
+            {
+                return;
+            }
+            files_work.clear_registar_data_file();
+            login_EditLine_MF.Text = "";
+            pass_EditLine_MF.Text = "";
+            switch (counter) 
+            {
+                case 3:
+                registar.bun_date = DateTime.Now.AddMinutes(1);
+                    break;
+                case 5:
+                    registar.bun_date = DateTime.Now.AddMinutes(5);
+                    break;
+                case 10:
+                    registar.bun_date = DateTime.Now.AddMinutes(15);
+                    break;
+                case 15:
+                    registar.bun_date = DateTime.Now.AddMinutes(30);
+                    break;
+            }
+            if(counter > 15)
+            {
+                registar.bun_date = DateTime.Now.AddHours(1);
+            }
+            registar.login = "";
+            registar.password = "";
+            files_work.save_registar_data(registar);
+        }
         public Form1()
         {
             InitializeComponent();
 
             files_work.check_safe();
             Server_Data = files_work.read_server_data_file();
+            registar = files_work.read_registar_data_file();
             fill_server_page();
+            fill_authorization_panel();
             if (Server_Data.all_value_filled())
             {
                 db_obj = new DB(Server_Data);
@@ -174,7 +213,19 @@ namespace project_trotsa
         private void button_authorization_Click(object sender, EventArgs e)
         {
             errorProvider_MF.Clear();
-            if(login_EditLine_MF.Text == "")
+            if (registar.bun_date > DateTime.Now)
+            {
+                if(authorization_err_count != 0)
+                {
+                    MessageBox.Show($"Неудачных попыток авторизации: {authorization_err_count}\nПовторная попытка может быть совершена {registar.bun_date}", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show($"Было совершено много неудачных попыток авторизации\nПовторная попытка может быть совершена {registar.bun_date}", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                return;
+            }
+            if (login_EditLine_MF.Text == "")
             {
                 errorProvider_MF.SetError(login_EditLine_MF, "Введите логин");
                 return;
@@ -192,8 +243,15 @@ namespace project_trotsa
             {
                 if(!check_save_registar.Checked)
                 {
+                    files_work.clear_registar_data_file();
                     login_EditLine_MF.Text = "";
                     pass_EditLine_MF.Text = "";
+                }
+                else
+                {
+                    registar.login = login_EditLine_MF.Text;
+                    registar.password = pass_EditLine_MF.Text;
+                    files_work.save_registar_data(registar);
                 }
                 
                 this.Hide();
@@ -203,7 +261,9 @@ namespace project_trotsa
             else
             {
                 errorProvider_MF.SetError(pass_EditLine_MF, "Неверный пароль");
+                authorization_err_count++;
             }
+            bunning(authorization_err_count);
         }
 
         private void link_authorizathion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

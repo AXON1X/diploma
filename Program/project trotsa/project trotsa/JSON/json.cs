@@ -48,7 +48,7 @@ namespace project_trotsa.JSON
             JsonSerializer.Serialize<server_data>(fs, sd);
             fs.Close();
         }
-        void save_registar_data(registar rd)
+        static public void save_registar_data(registar rd)
         {
             FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json", FileMode.Create);
             JsonSerializer.Serialize<registar>(fs, rd);
@@ -71,9 +71,9 @@ namespace project_trotsa.JSON
             fs.Close();
             return return_data;
         }
-
-        void read_registar_data_file(registar rd)
+        static public registar read_registar_data_file()
         {
+            registar rd = new registar();
             FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json", FileMode.Open);
             try
             {
@@ -85,6 +85,13 @@ namespace project_trotsa.JSON
                 Console.WriteLine(ex.Message);
             }
             fs.Close();
+            return rd;
+        }
+        static public void clear_registar_data_file()
+        {
+            FileStream fs = new FileStream(Directory.GetCurrentDirectory() + "\\save_data\\registar_data.json", FileMode.Create);
+            fs.Close();
+
         }
     }
     struct server_data
@@ -122,6 +129,8 @@ namespace project_trotsa.JSON
         public string patronymic { get; set; }
         public string login { get; set; }
         public string password { get; set; }
+
+        public DateTime bun_date { get; set; }
     }
 
 
