@@ -32,10 +32,16 @@ namespace project_trotsa
 
             save_server_data.Visible = false;
         }
+
         void fill_authorization_panel()
         {
             login_EditLine_MF.Text = registar.login;
             pass_EditLine_MF.Text = registar.password;
+
+            if(login_EditLine_MF.Text != "" && pass_EditLine_MF.Text != "")
+            {
+                check_save_registar.Checked = true;
+            }
         }
         void bunning(int counter)
         {
@@ -255,7 +261,8 @@ namespace project_trotsa
                 }
                 
                 this.Hide();
-                registrator_form registrator_Form = new registrator_form();
+                registrator_form registrator_Form = new registrator_form(this);
+                
                 registrator_Form.Show();
             }
             else

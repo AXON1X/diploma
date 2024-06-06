@@ -146,5 +146,22 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             return false;
         }
+
+        public DataTable load_all_applicants(int limit)
+        {
+            dt.Clear();
+            cmd = "call get_applicants("+limit+", "+limit+10+");";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+        public DataTable load_all_applicants(int start_limit, int end_limit)
+        {
+            dt.Clear();
+            cmd = "call get_applicants("+start_limit+", "+end_limit+");";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
     }
 }

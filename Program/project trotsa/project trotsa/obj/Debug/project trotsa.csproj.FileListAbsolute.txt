@@ -46,3 +46,4 @@ D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trot
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.CopyComplete
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.exe
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.pdb
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.registrator_form.resources
