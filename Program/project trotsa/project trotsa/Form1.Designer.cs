@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label_pass = new System.Windows.Forms.Label();
+            this.label_login = new System.Windows.Forms.Label();
+            this.check_save_registar = new System.Windows.Forms.CheckBox();
+            this.button_authorization = new System.Windows.Forms.Button();
+            this.pass_EditLine_MF = new System.Windows.Forms.TextBox();
+            this.login_EditLine_MF = new System.Windows.Forms.TextBox();
+            this.link_authorizathion = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OptionsTabPage = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -47,21 +55,13 @@
             this.server_EditLine = new System.Windows.Forms.TextBox();
             this.save_server_data = new System.Windows.Forms.Button();
             this.check_conn_button = new System.Windows.Forms.Button();
-            this.link_authorizathion = new System.Windows.Forms.LinkLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.login_EditLine_MF = new System.Windows.Forms.TextBox();
-            this.pass_EditLine_MF = new System.Windows.Forms.TextBox();
-            this.button_authorization = new System.Windows.Forms.Button();
-            this.check_save_registar = new System.Windows.Forms.CheckBox();
-            this.label_login = new System.Windows.Forms.Label();
-            this.label_pass = new System.Windows.Forms.Label();
             this.errorProvider_MF = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.OptionsTabPage.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MF)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,88 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label_pass);
+            this.panel1.Controls.Add(this.label_login);
+            this.panel1.Controls.Add(this.check_save_registar);
+            this.panel1.Controls.Add(this.button_authorization);
+            this.panel1.Controls.Add(this.pass_EditLine_MF);
+            this.panel1.Controls.Add(this.login_EditLine_MF);
+            this.panel1.Location = new System.Drawing.Point(9, 41);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(206, 284);
+            this.panel1.TabIndex = 1;
+            this.panel1.Visible = false;
+            // 
+            // label_pass
+            // 
+            this.label_pass.AutoSize = true;
+            this.label_pass.Location = new System.Drawing.Point(29, 96);
+            this.label_pass.Name = "label_pass";
+            this.label_pass.Size = new System.Drawing.Size(56, 16);
+            this.label_pass.TabIndex = 7;
+            this.label_pass.Text = "Пароль";
+            // 
+            // label_login
+            // 
+            this.label_login.AutoSize = true;
+            this.label_login.Location = new System.Drawing.Point(29, 33);
+            this.label_login.Name = "label_login";
+            this.label_login.Size = new System.Drawing.Size(46, 16);
+            this.label_login.TabIndex = 6;
+            this.label_login.Text = "Логин";
+            // 
+            // check_save_registar
+            // 
+            this.check_save_registar.AutoSize = true;
+            this.check_save_registar.Location = new System.Drawing.Point(46, 219);
+            this.check_save_registar.Name = "check_save_registar";
+            this.check_save_registar.Size = new System.Drawing.Size(98, 20);
+            this.check_save_registar.TabIndex = 5;
+            this.check_save_registar.Text = "Сохранить";
+            this.check_save_registar.UseVisualStyleBackColor = true;
+            // 
+            // button_authorization
+            // 
+            this.button_authorization.Location = new System.Drawing.Point(29, 164);
+            this.button_authorization.Name = "button_authorization";
+            this.button_authorization.Size = new System.Drawing.Size(138, 49);
+            this.button_authorization.TabIndex = 4;
+            this.button_authorization.Text = "Авторизация";
+            this.button_authorization.UseVisualStyleBackColor = true;
+            this.button_authorization.Click += new System.EventHandler(this.button_authorization_Click);
+            // 
+            // pass_EditLine_MF
+            // 
+            this.pass_EditLine_MF.Location = new System.Drawing.Point(29, 115);
+            this.pass_EditLine_MF.MaxLength = 10;
+            this.pass_EditLine_MF.Name = "pass_EditLine_MF";
+            this.pass_EditLine_MF.PasswordChar = '*';
+            this.pass_EditLine_MF.ShortcutsEnabled = false;
+            this.pass_EditLine_MF.Size = new System.Drawing.Size(138, 22);
+            this.pass_EditLine_MF.TabIndex = 3;
+            // 
+            // login_EditLine_MF
+            // 
+            this.login_EditLine_MF.Location = new System.Drawing.Point(29, 55);
+            this.login_EditLine_MF.MaxLength = 15;
+            this.login_EditLine_MF.Name = "login_EditLine_MF";
+            this.login_EditLine_MF.ShortcutsEnabled = false;
+            this.login_EditLine_MF.Size = new System.Drawing.Size(138, 22);
+            this.login_EditLine_MF.TabIndex = 2;
+            // 
+            // link_authorizathion
+            // 
+            this.link_authorizathion.AutoSize = true;
+            this.link_authorizathion.Location = new System.Drawing.Point(6, 22);
+            this.link_authorizathion.Name = "link_authorizathion";
+            this.link_authorizathion.Size = new System.Drawing.Size(94, 16);
+            this.link_authorizathion.TabIndex = 0;
+            this.link_authorizathion.TabStop = true;
+            this.link_authorizathion.Text = "Авторизация";
+            this.link_authorizathion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_authorizathion_LinkClicked);
             // 
             // tabPage2
             // 
@@ -268,88 +350,6 @@
             this.check_conn_button.UseVisualStyleBackColor = true;
             this.check_conn_button.Click += new System.EventHandler(this.check_conn_button_Click);
             // 
-            // link_authorizathion
-            // 
-            this.link_authorizathion.AutoSize = true;
-            this.link_authorizathion.Location = new System.Drawing.Point(6, 22);
-            this.link_authorizathion.Name = "link_authorizathion";
-            this.link_authorizathion.Size = new System.Drawing.Size(94, 16);
-            this.link_authorizathion.TabIndex = 0;
-            this.link_authorizathion.TabStop = true;
-            this.link_authorizathion.Text = "Авторизация";
-            this.link_authorizathion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_authorizathion_LinkClicked);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label_pass);
-            this.panel1.Controls.Add(this.label_login);
-            this.panel1.Controls.Add(this.check_save_registar);
-            this.panel1.Controls.Add(this.button_authorization);
-            this.panel1.Controls.Add(this.pass_EditLine_MF);
-            this.panel1.Controls.Add(this.login_EditLine_MF);
-            this.panel1.Location = new System.Drawing.Point(9, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(206, 284);
-            this.panel1.TabIndex = 1;
-            this.panel1.Visible = false;
-            // 
-            // login_EditLine_MF
-            // 
-            this.login_EditLine_MF.Location = new System.Drawing.Point(29, 55);
-            this.login_EditLine_MF.MaxLength = 15;
-            this.login_EditLine_MF.Name = "login_EditLine_MF";
-            this.login_EditLine_MF.ShortcutsEnabled = false;
-            this.login_EditLine_MF.Size = new System.Drawing.Size(138, 22);
-            this.login_EditLine_MF.TabIndex = 2;
-            // 
-            // pass_EditLine_MF
-            // 
-            this.pass_EditLine_MF.Location = new System.Drawing.Point(29, 115);
-            this.pass_EditLine_MF.MaxLength = 10;
-            this.pass_EditLine_MF.Name = "pass_EditLine_MF";
-            this.pass_EditLine_MF.PasswordChar = '*';
-            this.pass_EditLine_MF.ShortcutsEnabled = false;
-            this.pass_EditLine_MF.Size = new System.Drawing.Size(138, 22);
-            this.pass_EditLine_MF.TabIndex = 3;
-            // 
-            // button_authorization
-            // 
-            this.button_authorization.Location = new System.Drawing.Point(29, 164);
-            this.button_authorization.Name = "button_authorization";
-            this.button_authorization.Size = new System.Drawing.Size(138, 49);
-            this.button_authorization.TabIndex = 4;
-            this.button_authorization.Text = "Авторизация";
-            this.button_authorization.UseVisualStyleBackColor = true;
-            this.button_authorization.Click += new System.EventHandler(this.button_authorization_Click);
-            // 
-            // check_save_registar
-            // 
-            this.check_save_registar.AutoSize = true;
-            this.check_save_registar.Location = new System.Drawing.Point(46, 219);
-            this.check_save_registar.Name = "check_save_registar";
-            this.check_save_registar.Size = new System.Drawing.Size(98, 20);
-            this.check_save_registar.TabIndex = 5;
-            this.check_save_registar.Text = "Сохранить";
-            this.check_save_registar.UseVisualStyleBackColor = true;
-            // 
-            // label_login
-            // 
-            this.label_login.AutoSize = true;
-            this.label_login.Location = new System.Drawing.Point(29, 33);
-            this.label_login.Name = "label_login";
-            this.label_login.Size = new System.Drawing.Size(46, 16);
-            this.label_login.TabIndex = 6;
-            this.label_login.Text = "Логин";
-            // 
-            // label_pass
-            // 
-            this.label_pass.AutoSize = true;
-            this.label_pass.Location = new System.Drawing.Point(29, 96);
-            this.label_pass.Name = "label_pass";
-            this.label_pass.Size = new System.Drawing.Size(56, 16);
-            this.label_pass.TabIndex = 7;
-            this.label_pass.Text = "Пароль";
-            // 
             // errorProvider_MF
             // 
             this.errorProvider_MF.ContainerControl = this;
@@ -367,12 +367,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.OptionsTabPage.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider_MF)).EndInit();
             this.ResumeLayout(false);
 

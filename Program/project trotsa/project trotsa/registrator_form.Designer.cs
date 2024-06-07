@@ -34,6 +34,10 @@
             this.button_to_start_list = new System.Windows.Forms.Button();
             this.button_ten_next = new System.Windows.Forms.Button();
             this.comboBox_Counter = new System.Windows.Forms.ComboBox();
+            this.comboBox_faculties = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label_facukties = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,6 +46,8 @@
             this.DGV_Applicants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Applicants.Location = new System.Drawing.Point(12, 42);
             this.DGV_Applicants.Name = "DGV_Applicants";
+            this.DGV_Applicants.ReadOnly = true;
+            this.DGV_Applicants.RowHeadersVisible = false;
             this.DGV_Applicants.RowHeadersWidth = 51;
             this.DGV_Applicants.RowTemplate.Height = 24;
             this.DGV_Applicants.Size = new System.Drawing.Size(424, 362);
@@ -102,11 +108,51 @@
             this.comboBox_Counter.TabIndex = 6;
             this.comboBox_Counter.SelectedIndexChanged += new System.EventHandler(this.comboBox_Counter_SelectedIndexChanged);
             // 
+            // comboBox_faculties
+            // 
+            this.comboBox_faculties.FormattingEnabled = true;
+            this.comboBox_faculties.Location = new System.Drawing.Point(442, 42);
+            this.comboBox_faculties.Name = "comboBox_faculties";
+            this.comboBox_faculties.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_faculties.TabIndex = 7;
+            this.comboBox_faculties.SelectedValueChanged += new System.EventHandler(this.comboBox_faculties_SelectedValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(570, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label_facukties
+            // 
+            this.label_facukties.AutoSize = true;
+            this.label_facukties.Location = new System.Drawing.Point(439, 23);
+            this.label_facukties.Name = "label_facukties";
+            this.label_facukties.Size = new System.Drawing.Size(78, 16);
+            this.label_facukties.TabIndex = 9;
+            this.label_facukties.Text = "факультет";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(600, 41);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(35, 24);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "...";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // registrator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label_facukties);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox_faculties);
             this.Controls.Add(this.comboBox_Counter);
             this.Controls.Add(this.button_ten_next);
             this.Controls.Add(this.button_to_start_list);
@@ -114,6 +160,7 @@
             this.Controls.Add(this.label_counter_dgv);
             this.Controls.Add(this.DGV_Applicants);
             this.Name = "registrator_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registrator_form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.registrator_form_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).EndInit();
@@ -130,5 +177,9 @@
         private System.Windows.Forms.Button button_to_start_list;
         private System.Windows.Forms.Button button_ten_next;
         private System.Windows.Forms.ComboBox comboBox_Counter;
+        private System.Windows.Forms.ComboBox comboBox_faculties;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_facukties;
+        private System.Windows.Forms.Button button2;
     }
 }

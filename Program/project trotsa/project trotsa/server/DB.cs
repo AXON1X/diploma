@@ -146,22 +146,39 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             return false;
         }
-
-        public DataTable load_all_applicants(int limit)
-        {
-            dt.Clear();
-            cmd = "call get_applicants("+limit+", "+limit+10+");";
-            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
-            adapter.Fill(dt);
-            return dt;
-        }
         public DataTable load_all_applicants(int start_limit, int end_limit)
         {
             dt.Clear();
+            dt.Columns.Clear();
             cmd = "call get_applicants("+start_limit+", "+end_limit+");";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
             return dt;
+        }
+        public DataTable load_applicants_facultie(string facultie, int start_limit, int end_limit)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "call trotsa.get_applicants_facultie(\'"+facultie+"\', "+start_limit+", "+end_limit+");";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public List<string> load_all_faculties()
+        {
+            List<string> faculties_list = new List<string>();
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT code_facultie FROM faculties;";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            faculties_list.Add("все");
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                faculties_list.Add(dt.Rows[0][i].ToString());
+            }
+            return faculties_list;
         }
     }
 }
