@@ -35,9 +35,9 @@
             this.button_ten_next = new System.Windows.Forms.Button();
             this.comboBox_Counter = new System.Windows.Forms.ComboBox();
             this.comboBox_faculties = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_add_facultie = new System.Windows.Forms.Button();
             this.label_facukties = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_edit_facultie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,14 +117,15 @@
             this.comboBox_faculties.TabIndex = 7;
             this.comboBox_faculties.SelectedValueChanged += new System.EventHandler(this.comboBox_faculties_SelectedValueChanged);
             // 
-            // button1
+            // button_add_facultie
             // 
-            this.button1.Location = new System.Drawing.Point(570, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 24);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_add_facultie.Location = new System.Drawing.Point(570, 42);
+            this.button_add_facultie.Name = "button_add_facultie";
+            this.button_add_facultie.Size = new System.Drawing.Size(24, 24);
+            this.button_add_facultie.TabIndex = 8;
+            this.button_add_facultie.Text = "+";
+            this.button_add_facultie.UseVisualStyleBackColor = true;
+            this.button_add_facultie.Click += new System.EventHandler(this.button_add_facultie_Click);
             // 
             // label_facukties
             // 
@@ -135,23 +136,24 @@
             this.label_facukties.TabIndex = 9;
             this.label_facukties.Text = "факультет";
             // 
-            // button2
+            // button_edit_facultie
             // 
-            this.button2.Location = new System.Drawing.Point(600, 41);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(35, 24);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_edit_facultie.Location = new System.Drawing.Point(600, 41);
+            this.button_edit_facultie.Name = "button_edit_facultie";
+            this.button_edit_facultie.Size = new System.Drawing.Size(35, 24);
+            this.button_edit_facultie.TabIndex = 10;
+            this.button_edit_facultie.Text = "...";
+            this.button_edit_facultie.UseVisualStyleBackColor = true;
+            this.button_edit_facultie.Click += new System.EventHandler(this.button_edit_facultie_Click);
             // 
             // registrator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button_edit_facultie);
             this.Controls.Add(this.label_facukties);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_add_facultie);
             this.Controls.Add(this.comboBox_faculties);
             this.Controls.Add(this.comboBox_Counter);
             this.Controls.Add(this.button_ten_next);
@@ -178,8 +180,8 @@
         private System.Windows.Forms.Button button_ten_next;
         private System.Windows.Forms.ComboBox comboBox_Counter;
         private System.Windows.Forms.ComboBox comboBox_faculties;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_add_facultie;
         private System.Windows.Forms.Label label_facukties;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_edit_facultie;
     }
 }

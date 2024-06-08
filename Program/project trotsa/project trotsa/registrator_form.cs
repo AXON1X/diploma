@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,16 +25,19 @@ namespace project_trotsa
             oldForm = previous;
             obj_registrator_db = new DB(files_work.read_server_data_file());
             comboBox_Counter.SelectedIndex = 0;
-            comboBox_faculties.DataSource = obj_registrator_db.load_all_faculties();
+            updateComboBox_facultie();
             applicants = obj_registrator_db.load_all_applicants(counter, counter+Convert.ToInt32(comboBox_Counter.Text));
             label_counter_dgv.Text += applicants.Rows.Count.ToString();
             set_applicants();
-            
-
-
         }
 
-        void set_applicants()
+        public void updateComboBox_facultie()
+        {
+            comboBox_faculties.DataSource = null;
+            comboBox_faculties.DataSource = obj_registrator_db.load_all_faculties();
+        }
+
+            void set_applicants()
         {
             if(comboBox_faculties.Text == "все")
             {
@@ -84,6 +88,28 @@ namespace project_trotsa
         private void comboBox_faculties_SelectedValueChanged(object sender, EventArgs e)
         {
             set_applicants();
+        }
+
+        private void button_add_facultie_Click(object sender, EventArgs e)
+        {
+            facultie facultie = new facultie();
+            facultie.ShowDialog();
+        }
+
+        private void button_edit_facultie_Click(object sender, EventArgs e)
+        {
+            if(comboBox_faculties.Text == "все")
+            {
+                return;
+            }
+            facultie facultie = new facultie(comboBox_faculties.Text);
+            facultie.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
+            facultie.ShowDialog();
+        }
+
+        void facultie_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            updateComboBox_facultie();
         }
     }
 }
