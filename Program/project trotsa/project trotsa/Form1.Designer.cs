@@ -38,7 +38,6 @@
             this.button_authorization = new System.Windows.Forms.Button();
             this.pass_EditLine_MF = new System.Windows.Forms.TextBox();
             this.login_EditLine_MF = new System.Windows.Forms.TextBox();
-            this.link_authorizathion = new System.Windows.Forms.LinkLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OptionsTabPage = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -79,7 +78,6 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.link_authorizathion);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
@@ -97,11 +95,10 @@
             this.panel1.Controls.Add(this.button_authorization);
             this.panel1.Controls.Add(this.pass_EditLine_MF);
             this.panel1.Controls.Add(this.login_EditLine_MF);
-            this.panel1.Location = new System.Drawing.Point(9, 41);
+            this.panel1.Location = new System.Drawing.Point(275, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 284);
             this.panel1.TabIndex = 1;
-            this.panel1.Visible = false;
             // 
             // label_pass
             // 
@@ -124,7 +121,7 @@
             // check_save_registar
             // 
             this.check_save_registar.AutoSize = true;
-            this.check_save_registar.Location = new System.Drawing.Point(46, 219);
+            this.check_save_registar.Location = new System.Drawing.Point(51, 219);
             this.check_save_registar.Name = "check_save_registar";
             this.check_save_registar.Size = new System.Drawing.Size(98, 20);
             this.check_save_registar.TabIndex = 5;
@@ -159,17 +156,6 @@
             this.login_EditLine_MF.ShortcutsEnabled = false;
             this.login_EditLine_MF.Size = new System.Drawing.Size(138, 22);
             this.login_EditLine_MF.TabIndex = 2;
-            // 
-            // link_authorizathion
-            // 
-            this.link_authorizathion.AutoSize = true;
-            this.link_authorizathion.Location = new System.Drawing.Point(6, 22);
-            this.link_authorizathion.Name = "link_authorizathion";
-            this.link_authorizathion.Size = new System.Drawing.Size(94, 16);
-            this.link_authorizathion.TabIndex = 0;
-            this.link_authorizathion.TabStop = true;
-            this.link_authorizathion.Text = "Авторизация";
-            this.link_authorizathion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_authorizathion_LinkClicked);
             // 
             // tabPage2
             // 
@@ -366,7 +352,6 @@
             this.Text = "Авторизация";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -399,7 +384,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox port_EditLine;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.LinkLabel link_authorizathion;
         private System.Windows.Forms.Label label_pass;
         private System.Windows.Forms.Label label_login;
         private System.Windows.Forms.CheckBox check_save_registar;

@@ -36,7 +36,7 @@
             this.comboBox_Counter = new System.Windows.Forms.ComboBox();
             this.comboBox_faculties = new System.Windows.Forms.ComboBox();
             this.button_add_facultie = new System.Windows.Forms.Button();
-            this.label_facukties = new System.Windows.Forms.Label();
+            this.label_facultie = new System.Windows.Forms.Label();
             this.button_edit_facultie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
@@ -127,14 +127,14 @@
             this.button_add_facultie.UseVisualStyleBackColor = true;
             this.button_add_facultie.Click += new System.EventHandler(this.button_add_facultie_Click);
             // 
-            // label_facukties
+            // label_facultie
             // 
-            this.label_facukties.AutoSize = true;
-            this.label_facukties.Location = new System.Drawing.Point(439, 23);
-            this.label_facukties.Name = "label_facukties";
-            this.label_facukties.Size = new System.Drawing.Size(78, 16);
-            this.label_facukties.TabIndex = 9;
-            this.label_facukties.Text = "факультет";
+            this.label_facultie.AutoSize = true;
+            this.label_facultie.Location = new System.Drawing.Point(439, 23);
+            this.label_facultie.Name = "label_facultie";
+            this.label_facultie.Size = new System.Drawing.Size(78, 16);
+            this.label_facultie.TabIndex = 9;
+            this.label_facultie.Text = "факультет";
             // 
             // button_edit_facultie
             // 
@@ -152,7 +152,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
             this.Controls.Add(this.button_edit_facultie);
-            this.Controls.Add(this.label_facukties);
+            this.Controls.Add(this.label_facultie);
             this.Controls.Add(this.button_add_facultie);
             this.Controls.Add(this.comboBox_faculties);
             this.Controls.Add(this.comboBox_Counter);
@@ -181,7 +181,7 @@
         private System.Windows.Forms.ComboBox comboBox_Counter;
         private System.Windows.Forms.ComboBox comboBox_faculties;
         private System.Windows.Forms.Button button_add_facultie;
-        private System.Windows.Forms.Label label_facukties;
+        private System.Windows.Forms.Label label_facultie;
         private System.Windows.Forms.Button button_edit_facultie;
     }
 }

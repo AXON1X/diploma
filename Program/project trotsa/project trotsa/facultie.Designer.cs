@@ -62,14 +62,16 @@
             this.textBox_code_facultie.Location = new System.Drawing.Point(125, 46);
             this.textBox_code_facultie.Name = "textBox_code_facultie";
             this.textBox_code_facultie.Size = new System.Drawing.Size(155, 22);
-            this.textBox_code_facultie.TabIndex = 2;
+            this.textBox_code_facultie.TabIndex = 4;
+            this.textBox_code_facultie.TabStop = false;
             // 
             // textBox_name_facultie
             // 
             this.textBox_name_facultie.Location = new System.Drawing.Point(125, 77);
             this.textBox_name_facultie.Name = "textBox_name_facultie";
             this.textBox_name_facultie.Size = new System.Drawing.Size(155, 22);
-            this.textBox_name_facultie.TabIndex = 4;
+            this.textBox_name_facultie.TabIndex = 5;
+            this.textBox_name_facultie.TabStop = false;
             // 
             // label3
             // 
@@ -77,7 +79,7 @@
             this.label3.Location = new System.Drawing.Point(13, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 16);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 2;
             this.label3.Text = "Наименование";
             // 
             // textBox_short_name
@@ -86,6 +88,7 @@
             this.textBox_short_name.Name = "textBox_short_name";
             this.textBox_short_name.Size = new System.Drawing.Size(155, 22);
             this.textBox_short_name.TabIndex = 6;
+            this.textBox_short_name.TabStop = false;
             // 
             // label4
             // 
@@ -93,12 +96,12 @@
             this.label4.Location = new System.Drawing.Point(13, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 16);
-            this.label4.TabIndex = 5;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Короткое имя";
             // 
             // button_delete_facultie
             // 
-            this.button_delete_facultie.Location = new System.Drawing.Point(19, 155);
+            this.button_delete_facultie.Location = new System.Drawing.Point(16, 133);
             this.button_delete_facultie.Name = "button_delete_facultie";
             this.button_delete_facultie.Size = new System.Drawing.Size(119, 62);
             this.button_delete_facultie.TabIndex = 7;
@@ -108,11 +111,11 @@
             // 
             // button_add_change
             // 
-            this.button_add_change.Location = new System.Drawing.Point(161, 155);
+            this.button_add_change.Location = new System.Drawing.Point(161, 133);
             this.button_add_change.Name = "button_add_change";
             this.button_add_change.Size = new System.Drawing.Size(119, 62);
             this.button_add_change.TabIndex = 8;
-            this.button_add_change.Text = "Внести изменения";
+            this.button_add_change.Text = "добавить";
             this.button_add_change.UseVisualStyleBackColor = true;
             this.button_add_change.Click += new System.EventHandler(this.button_add_change_Click);
             // 
@@ -120,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 227);
+            this.ClientSize = new System.Drawing.Size(295, 203);
             this.Controls.Add(this.button_add_change);
             this.Controls.Add(this.button_delete_facultie);
             this.Controls.Add(this.textBox_short_name);
@@ -133,7 +136,6 @@
             this.Name = "facultie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Факультет";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.facultie_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

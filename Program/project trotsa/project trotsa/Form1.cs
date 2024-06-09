@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using project_trotsa.server;
 using Mysqlx.Expect;
 using System.Diagnostics.Eventing.Reader;
+using System.Security.Principal;
 
 namespace project_trotsa
 {
@@ -20,8 +21,6 @@ namespace project_trotsa
         registar registar;
         DB db_obj;
         int authorization_err_count = 0;
-
-
         void fill_server_page()
         {
             server_EditLine.Text = Server_Data.server;

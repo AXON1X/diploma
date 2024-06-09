@@ -37,7 +37,7 @@ namespace project_trotsa
             comboBox_faculties.DataSource = obj_registrator_db.load_all_faculties();
         }
 
-            void set_applicants()
+        void set_applicants()
         {
             if(comboBox_faculties.Text == "все")
             {
@@ -87,13 +87,26 @@ namespace project_trotsa
 
         private void comboBox_faculties_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (comboBox_faculties.SelectedText == "все")
+            {
+                label_facultie.Text = "Факультеты";
+            }
+            else 
+            {
+                label_facultie.Text = "Факультет: " + obj_registrator_db.facultie_short_name(comboBox_faculties.Text);
+            }
             set_applicants();
         }
 
         private void button_add_facultie_Click(object sender, EventArgs e)
         {
             facultie facultie = new facultie();
+            facultie.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
             facultie.ShowDialog();
+        }
+        private void facultie_form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            oldForm.Show();
         }
 
         private void button_edit_facultie_Click(object sender, EventArgs e)

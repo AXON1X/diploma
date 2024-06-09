@@ -19,7 +19,7 @@ namespace project_trotsa.server
         MySqlConnection conn = null;
         MySqlDataAdapter adapter = new MySqlDataAdapter();
         DataTable dt = new DataTable();
-        SqlCommand request = null;
+        MySqlCommand sql = null;
 
         public DB(server_data value)
         {
@@ -28,21 +28,18 @@ namespace project_trotsa.server
                 value.username + ";password=" + value.password + ";dataBase=" + value.database + ";";
             conn = new MySqlConnection(str_conn);
         }
-
         ~DB()
         {
             str_conn = "";
             conn = null;
             Server_Data.clear();
         }
-
         public void reset_str_conn(server_data value)
         {
             Server_Data = value;
             str_conn = "server=" + value.server + ";port=" + value.port + ";username=" +
             value.username + ";password=" + value.password + ";database=" + value.database + ";";
         }
-
         public void open_conn()
         {
             if(conn.State == System.Data.ConnectionState.Closed)
@@ -58,7 +55,6 @@ namespace project_trotsa.server
                     
             }
         }
-
         public void close_conn()
         {
             if (conn.State == System.Data.ConnectionState.Open)
@@ -74,7 +70,6 @@ namespace project_trotsa.server
 
             }
         }
-
         public MySqlConnection get_conn()
         {
             return conn;
@@ -92,7 +87,6 @@ namespace project_trotsa.server
 
             return false;
         }
-
         public bool search_login(string login)
         {
             dt.Clear();
@@ -114,7 +108,6 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             return false;
         }
-
         public bool authorization(string set_login, string set_password)
         {
             dt.Clear();
@@ -162,7 +155,6 @@ namespace project_trotsa.server
             adapter.Fill(dt);
             return dt;
         }
-
         public List<string> load_all_faculties()
         {
             List<string> faculties_list = new List<string>();
@@ -178,22 +170,6 @@ namespace project_trotsa.server
             }
             return faculties_list;
         }
-
-        public void update_facultie(string old_code_facultie, string new_code_facultie,
-            string new_name_facultie, string new_short_name)
-        {
-            open_conn();
-            cmd = "call trotsa.update_facultie(\'"+old_code_facultie+"\', \'"+new_code_facultie+"\', \'"+new_name_facultie+"\', \'"+new_short_name+"\');";
-            MySqlCommand sql = new MySqlCommand(cmd, get_conn());
-
-            if(sql.ExecuteNonQuery() == 1)
-            {
-                MessageBox.Show("Изменено", "Факультет", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            close_conn();
-
-        }
-
         public bool facultie_exists(string code_facultie)
         {
             dt.Clear();
@@ -232,6 +208,49 @@ namespace project_trotsa.server
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
             return dt.Rows[0][0].ToString();
+        }
+
+        public void change_data_facultie(string code_facultie, string name, string short_name)
+        {
+            open_conn();
+            cmd = "call trotsa.update_data_facultie(\'"+code_facultie+"\', \'"+name+"\', \'"+short_name+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+
+        public void change_code_facultie(string old_code, string new_code)
+        {
+            open_conn();
+            cmd = "call trotsa.change_code(\'"+old_code+"\', \'"+new_code+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public void delete_old_code_facultie(string old_code)
+        {
+            open_conn();
+            cmd = "call trotsa.delete_old_code_facultie(\'"+old_code+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+
+        public void delete_facultie(string delete_code)
+        {
+            open_conn();
+            cmd = "call trotsa.delete_facultie(\'"+delete_code+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public void add_facultie(string code_facultie, string name_facultie, string short_name)
+        {
+            open_conn();
+            cmd = "call trotsa.add_facultie(\'"+code_facultie+"\', \'"+name_facultie+"\', \'"+short_name+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
         }
     }
 }
