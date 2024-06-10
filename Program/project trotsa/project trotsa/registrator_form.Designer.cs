@@ -38,6 +38,7 @@
             this.button_add_facultie = new System.Windows.Forms.Button();
             this.label_facultie = new System.Windows.Forms.Label();
             this.button_edit_facultie = new System.Windows.Forms.Button();
+            this.button_delete_applicants = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.DGV_Applicants.RowHeadersVisible = false;
             this.DGV_Applicants.RowHeadersWidth = 51;
             this.DGV_Applicants.RowTemplate.Height = 24;
+            this.DGV_Applicants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Applicants.Size = new System.Drawing.Size(424, 362);
             this.DGV_Applicants.TabIndex = 0;
             // 
@@ -146,11 +148,22 @@
             this.button_edit_facultie.UseVisualStyleBackColor = true;
             this.button_edit_facultie.Click += new System.EventHandler(this.button_edit_facultie_Click);
             // 
+            // button_delete_applicants
+            // 
+            this.button_delete_applicants.Location = new System.Drawing.Point(443, 73);
+            this.button_delete_applicants.Name = "button_delete_applicants";
+            this.button_delete_applicants.Size = new System.Drawing.Size(192, 56);
+            this.button_delete_applicants.TabIndex = 11;
+            this.button_delete_applicants.Text = "удалить";
+            this.button_delete_applicants.UseVisualStyleBackColor = true;
+            this.button_delete_applicants.Click += new System.EventHandler(this.button_delete_applicants_Click);
+            // 
             // registrator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.button_delete_applicants);
             this.Controls.Add(this.button_edit_facultie);
             this.Controls.Add(this.label_facultie);
             this.Controls.Add(this.button_add_facultie);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Button button_add_facultie;
         private System.Windows.Forms.Label label_facultie;
         private System.Windows.Forms.Button button_edit_facultie;
+        private System.Windows.Forms.Button button_delete_applicants;
     }
 }

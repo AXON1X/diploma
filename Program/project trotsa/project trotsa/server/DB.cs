@@ -143,7 +143,14 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             cmd = "call get_applicants("+start_limit+", "+end_limit+");";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
-            adapter.Fill(dt);
+            try 
+            {
+                adapter.Fill(dt);
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+            }
             return dt;
         }
         public DataTable load_applicants_facultie(string facultie, int start_limit, int end_limit)
@@ -152,7 +159,14 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             cmd = "call trotsa.get_applicants_facultie(\'"+facultie+"\', "+start_limit+", "+end_limit+");";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
-            adapter.Fill(dt);
+            try
+            {
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             return dt;
         }
         public List<string> load_all_faculties()
@@ -209,7 +223,6 @@ namespace project_trotsa.server
             adapter.Fill(dt);
             return dt.Rows[0][0].ToString();
         }
-
         public void change_data_facultie(string code_facultie, string name, string short_name)
         {
             open_conn();
@@ -218,7 +231,6 @@ namespace project_trotsa.server
             sql.ExecuteNonQuery();
             close_conn();
         }
-
         public void change_code_facultie(string old_code, string new_code)
         {
             open_conn();
@@ -235,7 +247,6 @@ namespace project_trotsa.server
             sql.ExecuteNonQuery();
             close_conn();
         }
-
         public void delete_facultie(string delete_code)
         {
             open_conn();
@@ -248,6 +259,15 @@ namespace project_trotsa.server
         {
             open_conn();
             cmd = "call trotsa.add_facultie(\'"+code_facultie+"\', \'"+name_facultie+"\', \'"+short_name+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+
+        public void delete_applicant(string id)
+        {
+            open_conn();
+            cmd = "call trotsa.delete_applicant("+id+");";
             sql = new MySqlCommand(cmd, get_conn());
             sql.ExecuteNonQuery();
             close_conn();

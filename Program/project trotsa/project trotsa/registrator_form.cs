@@ -1,4 +1,5 @@
-﻿using project_trotsa.JSON;
+﻿using Mysqlx.Resultset;
+using project_trotsa.JSON;
 using project_trotsa.server;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace project_trotsa
         {
             InitializeComponent();
             oldForm = previous;
+            DGV_Applicants.AllowUserToAddRows = false;
             obj_registrator_db = new DB(files_work.read_server_data_file());
             comboBox_Counter.SelectedIndex = 0;
             updateComboBox_facultie();
@@ -39,7 +41,8 @@ namespace project_trotsa
 
         void set_applicants()
         {
-            if(comboBox_faculties.Text == "все")
+            DGV_Applicants.AllowUserToAddRows = true;
+            if (comboBox_faculties.Text == "все")
             {
                 applicants = obj_registrator_db.load_all_applicants(counter, Convert.ToInt32(comboBox_Counter.Text));
             }
@@ -50,7 +53,8 @@ namespace project_trotsa
            
            DGV_Applicants.DataSource = applicants;
            label_counter_dgv.Text = $"{counter+1}—{counter+Convert.ToInt32(comboBox_Counter.Text)}";
-            
+           DGV_Applicants.AllowUserToAddRows = false;
+
         }
 
         private void registrator_form_FormClosing(object sender, FormClosingEventArgs e)
@@ -123,6 +127,33 @@ namespace project_trotsa
         void facultie_FormClosed(object sender, FormClosedEventArgs e)
         {
             updateComboBox_facultie();
+        }
+
+        private void button_delete_applicants_Click(object sender, EventArgs e)
+        {
+            if (DGV_Applicants.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Вы не выбрали ни одного студента", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            string question = "Вы действительно хотите удалить ";
+            if (DGV_Applicants.SelectedRows.Count == 1) { question += "аббитуриента?"; }
+            else if (DGV_Applicants.SelectedRows.Count > 1) { question += "аббитуриентов?"; }
+
+            if (DialogResult.Yes == MessageBox.Show(question, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                if(DGV_Applicants.SelectedRows.Count > 0)
+                {
+                    foreach(DataGridViewRow applicant_cell in DGV_Applicants.SelectedRows)
+                    {
+                        Console.WriteLine(applicant_cell);
+                        obj_registrator_db.delete_applicant(applicant_cell.Cells[0].Value.ToString());
+                    }
+                }
+
+                set_applicants();
+            }
         }
     }
 }
