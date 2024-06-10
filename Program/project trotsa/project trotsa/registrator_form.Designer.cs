@@ -39,6 +39,8 @@
             this.label_facultie = new System.Windows.Forms.Label();
             this.button_edit_facultie = new System.Windows.Forms.Button();
             this.button_delete_applicants = new System.Windows.Forms.Button();
+            this.button_create_applicant = new System.Windows.Forms.Button();
+            this.button_change_data = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,7 +152,7 @@
             // 
             // button_delete_applicants
             // 
-            this.button_delete_applicants.Location = new System.Drawing.Point(443, 73);
+            this.button_delete_applicants.Location = new System.Drawing.Point(442, 348);
             this.button_delete_applicants.Name = "button_delete_applicants";
             this.button_delete_applicants.Size = new System.Drawing.Size(192, 56);
             this.button_delete_applicants.TabIndex = 11;
@@ -158,11 +160,32 @@
             this.button_delete_applicants.UseVisualStyleBackColor = true;
             this.button_delete_applicants.Click += new System.EventHandler(this.button_delete_applicants_Click);
             // 
+            // button_create_applicant
+            // 
+            this.button_create_applicant.Location = new System.Drawing.Point(443, 72);
+            this.button_create_applicant.Name = "button_create_applicant";
+            this.button_create_applicant.Size = new System.Drawing.Size(192, 56);
+            this.button_create_applicant.TabIndex = 12;
+            this.button_create_applicant.Text = "Добавить";
+            this.button_create_applicant.UseVisualStyleBackColor = true;
+            this.button_create_applicant.Click += new System.EventHandler(this.button_create_applicant_Click);
+            // 
+            // button_change_data
+            // 
+            this.button_change_data.Location = new System.Drawing.Point(442, 134);
+            this.button_change_data.Name = "button_change_data";
+            this.button_change_data.Size = new System.Drawing.Size(192, 56);
+            this.button_change_data.TabIndex = 13;
+            this.button_change_data.Text = "Изменить";
+            this.button_change_data.UseVisualStyleBackColor = true;
+            // 
             // registrator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.button_change_data);
+            this.Controls.Add(this.button_create_applicant);
             this.Controls.Add(this.button_delete_applicants);
             this.Controls.Add(this.button_edit_facultie);
             this.Controls.Add(this.label_facultie);
@@ -197,5 +220,7 @@
         private System.Windows.Forms.Label label_facultie;
         private System.Windows.Forms.Button button_edit_facultie;
         private System.Windows.Forms.Button button_delete_applicants;
+        private System.Windows.Forms.Button button_create_applicant;
+        private System.Windows.Forms.Button button_change_data;
     }
 }

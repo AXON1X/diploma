@@ -155,5 +155,13 @@ namespace project_trotsa
                 set_applicants();
             }
         }
+
+        private void button_create_applicant_Click(object sender, EventArgs e)
+        {
+            AddApplicant addApplicant = new AddApplicant();
+            addApplicant.Show();
+
+            addApplicant.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
+        }
     }
 }

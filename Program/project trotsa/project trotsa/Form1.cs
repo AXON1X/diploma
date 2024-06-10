@@ -260,9 +260,17 @@ namespace project_trotsa
                 }
                 
                 this.Hide();
-                registrator_form registrator_Form = new registrator_form(this);
+                if(db_obj.IsUserAdmin(login_EditLine_MF.Text))
+                {
+                    administratorForm Adform = new administratorForm(this);
+                    Adform.Show();
+                }
+                else 
+                {
+                    registrator_form registrator_Form = new registrator_form(this);
+                    registrator_Form.Show();
+                }
                 
-                registrator_Form.Show();
             }
             else
             {
