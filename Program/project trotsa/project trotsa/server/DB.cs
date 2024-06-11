@@ -67,6 +67,15 @@ namespace project_trotsa.server
             adapter.Fill(dt);
             return dt;
         }
+        public string get_current_facultie_applicant(string id_applicant)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "select trotsa.get_current_facultie_applicant("+id_applicant+");";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt.Rows[0][0].ToString();
+        }
         public void set_dop_info(string id, bool Disability, bool Privileges, bool Orphan, string Documents_Commentary, string Commentary)
         {
             open_conn();
@@ -359,6 +368,23 @@ namespace project_trotsa.server
             dt.Clear();
             dt.Columns.Clear();
             cmd = "call trotsa.get_applicants_facultie(\'"+facultie+"\', "+start_limit+", "+end_limit+");";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            try
+            {
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable get_access_to_exams(string id)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "call trotsa.access_to_exams(\'"+id+"\');";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             try
             {

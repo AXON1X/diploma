@@ -14,13 +14,14 @@ namespace project_trotsa
 {
     public partial class editApplicant : Form
     {
-        string id_applicant = "", id;
+        string id_applicant = "", id, code_facultie_applicant = "";
         DB obj_edit_db = new DB(files_work.read_server_data_file());
         DataTable dt = new DataTable();
         uint exam_sum = 0; 
         public editApplicant(string set_id)
         {
             InitializeComponent();
+            code_facultie_applicant = obj_edit_db.get_current_facultie_applicant(set_id);
             id_applicant += set_id;
             label_id.Text += set_id;
             id = set_id;
@@ -60,6 +61,7 @@ namespace project_trotsa
             label_sum.Text = exam_sum.ToString();
 
             comboBox_facultie.DataSource = obj_edit_db.load_all_faculties_adm();
+            block_textBox_exams();
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -69,6 +71,26 @@ namespace project_trotsa
             }
             
         }
+        void block_textBox_exams()
+        {
+            DataTable dt_exams = obj_edit_db.get_access_to_exams(code_facultie_applicant);
+            if(dt_exams.Rows.Count == 0) 
+            { return; }
+            textBox_russian.ReadOnly = !(bool)dt_exams.Rows[0][2];
+            textBox_math.ReadOnly = !(bool)dt_exams.Rows[0][3];
+            textBox_social_science.ReadOnly  = !(bool)dt_exams.Rows[0][4];
+            textBox_physic.ReadOnly  = !(bool)dt_exams.Rows[0][5];
+            textBox_history.ReadOnly  = !(bool)dt_exams.Rows[0][6];
+            textBox_computer_science.ReadOnly  = !(bool)dt_exams.Rows[0][7];
+            textBox_biology.ReadOnly = !(bool)dt_exams.Rows[0][8];
+            textBox_chemistry.ReadOnly = !(bool)dt_exams.Rows[0][9];
+            textBox_geography.ReadOnly  = !(bool)dt_exams.Rows[0][10];
+            textBox_literature.ReadOnly = !(bool)dt_exams.Rows[0][11];
+            textBox_foreign_language.ReadOnly  = !(bool)dt_exams.Rows[0][12];
+            dt_exams.Columns.Clear();
+            dt_exams.Clear();
+
+        }
 
         private void button_set_exams_Click(object sender, EventArgs e)
         {
@@ -76,14 +98,17 @@ namespace project_trotsa
             {
                 try
                 {
-                    obj_edit_db.set_exam_info(id, Convert.ToUInt32(textBox_russian.Text), Convert.ToUInt32(textBox_math.Text), Convert.ToUInt32(textBox_social_science.Text),
-                    Convert.ToUInt32(textBox_physic.Text), Convert.ToUInt32(textBox_history.Text), Convert.ToUInt32(textBox_computer_science.Text), Convert.ToUInt32(textBox_biology.Text), Convert.ToUInt32(textBox_chemistry.Text),
-                   Convert.ToUInt32(textBox_geography.Text), Convert.ToUInt32(textBox_literature.Text), Convert.ToUInt32(textBox_foreign_language.Text));
-                    
                     exam_sum = Convert.ToUInt32(textBox_russian.Text) + Convert.ToUInt32(textBox_math.Text) + Convert.ToUInt32(textBox_social_science.Text) +
                     Convert.ToUInt32(textBox_physic.Text) + Convert.ToUInt32(textBox_history.Text) + Convert.ToUInt32(textBox_computer_science.Text) + Convert.ToUInt32(textBox_biology.Text) + Convert.ToUInt32(textBox_chemistry.Text) +
                     Convert.ToUInt32(textBox_geography.Text) + Convert.ToUInt32(textBox_literature.Text) + Convert.ToUInt32(textBox_foreign_language.Text);
-
+                    if(exam_sum > 300)
+                    {
+                        MessageBox.Show($"Сумма баллов не должна превышать значение 300\nВведённая сумма {exam_sum}", "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    obj_edit_db.set_exam_info(id, Convert.ToUInt32(textBox_russian.Text), Convert.ToUInt32(textBox_math.Text), Convert.ToUInt32(textBox_social_science.Text),
+                    Convert.ToUInt32(textBox_physic.Text), Convert.ToUInt32(textBox_history.Text), Convert.ToUInt32(textBox_computer_science.Text), Convert.ToUInt32(textBox_biology.Text), Convert.ToUInt32(textBox_chemistry.Text),
+                   Convert.ToUInt32(textBox_geography.Text), Convert.ToUInt32(textBox_literature.Text), Convert.ToUInt32(textBox_foreign_language.Text));
                     obj_edit_db.set_exam_info_pd(id, exam_sum);
                     label_sum.Text = exam_sum.ToString();
                 }
@@ -105,6 +130,9 @@ namespace project_trotsa
             {
                 obj_edit_db.add_applicant_to_facultie(id, comboBox_facultie.Text);
                 MessageBox.Show("Успешно", "Специальность", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                code_facultie_applicant = obj_edit_db.get_current_facultie_applicant(id);
+                block_textBox_exams();
+                
             }
         }
 
@@ -112,7 +140,25 @@ namespace project_trotsa
         {
             if (DialogResult.Yes == MessageBox.Show("Вы уверены?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
-                obj_edit_db.delete_applicant_to_facultie(id, comboBox_facultie.Text);
+                if (code_facultie_applicant == "")
+                {
+                    return;
+                }
+                
+                obj_edit_db.delete_applicant_to_facultie(id, code_facultie_applicant);
+                code_facultie_applicant = obj_edit_db.get_current_facultie_applicant(id);
+
+                textBox_russian.ReadOnly = true;
+                textBox_math.ReadOnly = true;
+                textBox_social_science.ReadOnly = true;
+                textBox_physic.ReadOnly = true;
+                textBox_history.ReadOnly = true;
+                textBox_computer_science.ReadOnly = true;
+                textBox_biology.ReadOnly = true;
+                textBox_chemistry.ReadOnly = true;
+                textBox_geography.ReadOnly = true;
+                textBox_literature.ReadOnly = true;
+                textBox_foreign_language.ReadOnly = true;
             }
         }
 
