@@ -47,6 +47,10 @@
             // 
             // DGV_Applicants
             // 
+            this.DGV_Applicants.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DGV_Applicants.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_Applicants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Applicants.Location = new System.Drawing.Point(12, 42);
             this.DGV_Applicants.Name = "DGV_Applicants";
@@ -61,6 +65,8 @@
             // 
             // label_counter_dgv
             // 
+            this.label_counter_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label_counter_dgv.AutoSize = true;
             this.label_counter_dgv.Location = new System.Drawing.Point(12, 23);
             this.label_counter_dgv.Name = "label_counter_dgv";
@@ -70,6 +76,7 @@
             // 
             // button_ten_previous
             // 
+            this.button_ten_previous.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_ten_previous.Location = new System.Drawing.Point(93, 415);
             this.button_ten_previous.Name = "button_ten_previous";
             this.button_ten_previous.Size = new System.Drawing.Size(75, 23);
@@ -80,6 +87,7 @@
             // 
             // button_to_start_list
             // 
+            this.button_to_start_list.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_to_start_list.Location = new System.Drawing.Point(12, 415);
             this.button_to_start_list.Name = "button_to_start_list";
             this.button_to_start_list.Size = new System.Drawing.Size(75, 23);
@@ -90,6 +98,7 @@
             // 
             // button_ten_next
             // 
+            this.button_ten_next.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_ten_next.Location = new System.Drawing.Point(174, 415);
             this.button_ten_next.Name = "button_ten_next";
             this.button_ten_next.Size = new System.Drawing.Size(75, 23);
@@ -100,6 +109,7 @@
             // 
             // comboBox_Counter
             // 
+            this.comboBox_Counter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBox_Counter.FormattingEnabled = true;
             this.comboBox_Counter.Items.AddRange(new object[] {
             "10",
@@ -116,6 +126,7 @@
             // 
             // comboBox_faculties
             // 
+            this.comboBox_faculties.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox_faculties.FormattingEnabled = true;
             this.comboBox_faculties.Location = new System.Drawing.Point(441, 141);
             this.comboBox_faculties.Name = "comboBox_faculties";
@@ -125,6 +136,7 @@
             // 
             // label_facultie
             // 
+            this.label_facultie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_facultie.AutoSize = true;
             this.label_facultie.Location = new System.Drawing.Point(438, 122);
             this.label_facultie.Name = "label_facultie";
@@ -134,6 +146,7 @@
             // 
             // button_delete_applicants
             // 
+            this.button_delete_applicants.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button_delete_applicants.Location = new System.Drawing.Point(442, 348);
             this.button_delete_applicants.Name = "button_delete_applicants";
             this.button_delete_applicants.Size = new System.Drawing.Size(192, 56);
@@ -144,6 +157,7 @@
             // 
             // button_create_applicant
             // 
+            this.button_create_applicant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_create_applicant.Location = new System.Drawing.Point(442, 171);
             this.button_create_applicant.Name = "button_create_applicant";
             this.button_create_applicant.Size = new System.Drawing.Size(192, 56);
@@ -154,6 +168,7 @@
             // 
             // button_change_data
             // 
+            this.button_change_data.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_change_data.Location = new System.Drawing.Point(441, 233);
             this.button_change_data.Name = "button_change_data";
             this.button_change_data.Size = new System.Drawing.Size(192, 56);
@@ -164,6 +179,7 @@
             // 
             // textBox_search
             // 
+            this.textBox_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_search.Location = new System.Drawing.Point(443, 38);
             this.textBox_search.Name = "textBox_search";
             this.textBox_search.Size = new System.Drawing.Size(191, 22);
@@ -171,6 +187,7 @@
             // 
             // button_clear_search
             // 
+            this.button_clear_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_clear_search.Location = new System.Drawing.Point(443, 67);
             this.button_clear_search.Name = "button_clear_search";
             this.button_clear_search.Size = new System.Drawing.Size(75, 23);
@@ -181,6 +198,7 @@
             // 
             // button_search
             // 
+            this.button_search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_search.Location = new System.Drawing.Point(560, 67);
             this.button_search.Name = "button_search";
             this.button_search.Size = new System.Drawing.Size(75, 23);

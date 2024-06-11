@@ -40,7 +40,6 @@
             this.login_EditLine_MF = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.OptionsTabPage = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.DB_EditLine = new System.Windows.Forms.TextBox();
@@ -66,6 +65,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -89,6 +91,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label_pass);
             this.panel1.Controls.Add(this.label_login);
             this.panel1.Controls.Add(this.check_save_registar);
@@ -172,7 +175,9 @@
             // OptionsTabPage
             // 
             this.OptionsTabPage.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.OptionsTabPage.Controls.Add(this.tabPage3);
+            this.OptionsTabPage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.OptionsTabPage.Controls.Add(this.tabPage4);
             this.OptionsTabPage.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.OptionsTabPage.ItemSize = new System.Drawing.Size(30, 150);
@@ -185,17 +190,6 @@
             this.OptionsTabPage.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.OptionsTabPage.TabIndex = 0;
             this.OptionsTabPage.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.OptionsTabPage_DrawItem);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(154, 4);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(598, 377);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Интерфейс";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
@@ -315,8 +309,12 @@
             // 
             // save_server_data
             // 
+            this.save_server_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.save_server_data.Location = new System.Drawing.Point(5, 319);
             this.save_server_data.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.save_server_data.MaximumSize = new System.Drawing.Size(164, 52);
             this.save_server_data.Name = "save_server_data";
             this.save_server_data.Size = new System.Drawing.Size(164, 52);
             this.save_server_data.TabIndex = 6;
@@ -327,8 +325,11 @@
             // 
             // check_conn_button
             // 
+            this.check_conn_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.check_conn_button.Location = new System.Drawing.Point(367, 7);
             this.check_conn_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.check_conn_button.MaximumSize = new System.Drawing.Size(173, 76);
             this.check_conn_button.Name = "check_conn_button";
             this.check_conn_button.Size = new System.Drawing.Size(173, 76);
             this.check_conn_button.TabIndex = 0;
@@ -369,7 +370,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabControl OptionsTabPage;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox server_EditLine;
         private System.Windows.Forms.Button save_server_data;

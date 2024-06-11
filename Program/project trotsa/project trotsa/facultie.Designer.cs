@@ -133,6 +133,7 @@
             this.Controls.Add(this.textBox_code_facultie);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label_facultie);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "facultie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Факультет";

@@ -236,9 +236,10 @@
             this.Controls.Add(this.label_facultie);
             this.Controls.Add(this.button_add_facultie);
             this.Controls.Add(this.comboBox_faculties);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "administratorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "administratorForm";
+            this.Text = "Администратор";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.administratorForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

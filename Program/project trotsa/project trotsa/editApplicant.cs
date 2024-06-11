@@ -90,6 +90,19 @@ namespace project_trotsa
             dt_exams.Columns.Clear();
             dt_exams.Clear();
 
+            if (textBox_russian.ReadOnly) { textBox_russian.BackColor = Color.Black; } else { textBox_russian.BackColor = Color.Gray;}
+            if (textBox_math.ReadOnly) { textBox_math.BackColor = Color.Black; } else { textBox_math.BackColor = Color.Gray; }
+            if (textBox_social_science.ReadOnly) { textBox_social_science.BackColor = Color.Black; } else { textBox_social_science.BackColor = Color.Gray; }
+            if (textBox_physic.ReadOnly) { textBox_physic.BackColor = Color.Black; } else { textBox_physic.BackColor = Color.Gray; }
+            if (textBox_history.ReadOnly) { textBox_history.BackColor = Color.Black; } else { textBox_history.BackColor = Color.Gray; }
+            if (textBox_computer_science.ReadOnly) { textBox_computer_science.BackColor = Color.Gray; } else { textBox_computer_science.BackColor = Color.Gray; }
+            if (textBox_biology.ReadOnly) { textBox_biology.BackColor = Color.Black; } else { textBox_biology.BackColor = Color.Gray; }
+            if (textBox_chemistry.ReadOnly) { textBox_chemistry.BackColor = Color.Black; } else { textBox_chemistry.BackColor = Color.Gray; }
+            if (textBox_geography.ReadOnly) { textBox_geography.BackColor = Color.Black; } else { textBox_geography.BackColor = Color.Gray; }
+            if (textBox_literature.ReadOnly) { textBox_literature.BackColor = Color.Black; } else { textBox_literature.BackColor = Color.Gray; }
+            if (textBox_foreign_language.ReadOnly) { textBox_foreign_language.BackColor = Color.Black; } else { textBox_foreign_language.BackColor = Color.Gray; }
+
+
         }
 
         private void button_set_exams_Click(object sender, EventArgs e)
@@ -106,6 +119,7 @@ namespace project_trotsa
                         MessageBox.Show($"Сумма баллов не должна превышать значение 300\nВведённая сумма {exam_sum}", "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+
                     obj_edit_db.set_exam_info(id, Convert.ToUInt32(textBox_russian.Text), Convert.ToUInt32(textBox_math.Text), Convert.ToUInt32(textBox_social_science.Text),
                     Convert.ToUInt32(textBox_physic.Text), Convert.ToUInt32(textBox_history.Text), Convert.ToUInt32(textBox_computer_science.Text), Convert.ToUInt32(textBox_biology.Text), Convert.ToUInt32(textBox_chemistry.Text),
                    Convert.ToUInt32(textBox_geography.Text), Convert.ToUInt32(textBox_literature.Text), Convert.ToUInt32(textBox_foreign_language.Text));

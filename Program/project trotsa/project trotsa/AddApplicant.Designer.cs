@@ -107,6 +107,7 @@
             this.Controls.Add(this.textBox_patronymic_edit);
             this.Controls.Add(this.textBox_name_edit);
             this.Controls.Add(this.textBox_surname_edit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddApplicant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить";
