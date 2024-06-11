@@ -30,9 +30,34 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button_delete_applicant_facultie = new System.Windows.Forms.Button();
+            this.button_add_applicant_facultie = new System.Windows.Forms.Button();
+            this.comboBox_facultie = new System.Windows.Forms.ComboBox();
             this.label_sum = new System.Windows.Forms.Label();
             this.button_set_exams = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox_foreign_language = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox_literature = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_geography = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox_chemistry = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox_biology = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox_computer_science = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox_history = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox_physic = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox_social_science = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox_math = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox_russian = new System.Windows.Forms.TextBox();
             this.checkBox_Orphan = new System.Windows.Forms.CheckBox();
             this.checkBox_Privileges = new System.Windows.Forms.CheckBox();
             this.checkBox_Disability = new System.Windows.Forms.CheckBox();
@@ -48,43 +73,13 @@
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.textBox_surname = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox_literature = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox_foreign_language = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox_geography = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox_chemistry = new System.Windows.Forms.TextBox();
-            this.textBox_biology = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_history = new System.Windows.Forms.TextBox();
-            this.textBox_physic = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox_computer_science = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox_social_science = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox_math = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox_russian = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -93,6 +88,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button_delete_applicant_facultie);
+            this.tabPage1.Controls.Add(this.button_add_applicant_facultie);
+            this.tabPage1.Controls.Add(this.comboBox_facultie);
             this.tabPage1.Controls.Add(this.label_sum);
             this.tabPage1.Controls.Add(this.button_set_exams);
             this.tabPage1.Controls.Add(this.button4);
@@ -141,10 +139,38 @@
             this.tabPage1.Text = "абитуриент";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button_delete_applicant_facultie
+            // 
+            this.button_delete_applicant_facultie.Location = new System.Drawing.Point(421, 361);
+            this.button_delete_applicant_facultie.Name = "button_delete_applicant_facultie";
+            this.button_delete_applicant_facultie.Size = new System.Drawing.Size(75, 23);
+            this.button_delete_applicant_facultie.TabIndex = 42;
+            this.button_delete_applicant_facultie.Text = "убрать";
+            this.button_delete_applicant_facultie.UseVisualStyleBackColor = true;
+            this.button_delete_applicant_facultie.Click += new System.EventHandler(this.button_delete_applicant_facultie_Click);
+            // 
+            // button_add_applicant_facultie
+            // 
+            this.button_add_applicant_facultie.Location = new System.Drawing.Point(329, 361);
+            this.button_add_applicant_facultie.Name = "button_add_applicant_facultie";
+            this.button_add_applicant_facultie.Size = new System.Drawing.Size(86, 23);
+            this.button_add_applicant_facultie.TabIndex = 41;
+            this.button_add_applicant_facultie.Text = "добавить";
+            this.button_add_applicant_facultie.UseVisualStyleBackColor = true;
+            this.button_add_applicant_facultie.Click += new System.EventHandler(this.button_add_applicant_facultie_Click);
+            // 
+            // comboBox_facultie
+            // 
+            this.comboBox_facultie.FormattingEnabled = true;
+            this.comboBox_facultie.Location = new System.Drawing.Point(173, 361);
+            this.comboBox_facultie.Name = "comboBox_facultie";
+            this.comboBox_facultie.Size = new System.Drawing.Size(138, 24);
+            this.comboBox_facultie.TabIndex = 40;
+            // 
             // label_sum
             // 
             this.label_sum.AutoSize = true;
-            this.label_sum.Location = new System.Drawing.Point(600, 350);
+            this.label_sum.Location = new System.Drawing.Point(625, 350);
             this.label_sum.Name = "label_sum";
             this.label_sum.Size = new System.Drawing.Size(99, 16);
             this.label_sum.TabIndex = 39;
@@ -152,7 +178,7 @@
             // 
             // button_set_exams
             // 
-            this.button_set_exams.Location = new System.Drawing.Point(492, 315);
+            this.button_set_exams.Location = new System.Drawing.Point(517, 315);
             this.button_set_exams.Name = "button_set_exams";
             this.button_set_exams.Size = new System.Drawing.Size(102, 54);
             this.button_set_exams.TabIndex = 38;
@@ -169,6 +195,193 @@
             this.button4.Text = "Внести доп. данные";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(330, 312);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(128, 16);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "иностранный язык";
+            // 
+            // textBox_foreign_language
+            // 
+            this.textBox_foreign_language.Location = new System.Drawing.Point(333, 331);
+            this.textBox_foreign_language.MaxLength = 3;
+            this.textBox_foreign_language.Name = "textBox_foreign_language";
+            this.textBox_foreign_language.Size = new System.Drawing.Size(153, 22);
+            this.textBox_foreign_language.TabIndex = 35;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(171, 312);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(85, 16);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "литература";
+            // 
+            // textBox_literature
+            // 
+            this.textBox_literature.Location = new System.Drawing.Point(174, 331);
+            this.textBox_literature.MaxLength = 3;
+            this.textBox_literature.Name = "textBox_literature";
+            this.textBox_literature.Size = new System.Drawing.Size(153, 22);
+            this.textBox_literature.TabIndex = 33;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(488, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "география";
+            // 
+            // textBox_geography
+            // 
+            this.textBox_geography.Location = new System.Drawing.Point(491, 285);
+            this.textBox_geography.MaxLength = 3;
+            this.textBox_geography.Name = "textBox_geography";
+            this.textBox_geography.Size = new System.Drawing.Size(153, 22);
+            this.textBox_geography.TabIndex = 31;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(329, 266);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 16);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "химия";
+            // 
+            // textBox_chemistry
+            // 
+            this.textBox_chemistry.Location = new System.Drawing.Point(332, 285);
+            this.textBox_chemistry.MaxLength = 3;
+            this.textBox_chemistry.Name = "textBox_chemistry";
+            this.textBox_chemistry.Size = new System.Drawing.Size(153, 22);
+            this.textBox_chemistry.TabIndex = 29;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(170, 266);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 16);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "биология";
+            // 
+            // textBox_biology
+            // 
+            this.textBox_biology.Location = new System.Drawing.Point(173, 285);
+            this.textBox_biology.MaxLength = 3;
+            this.textBox_biology.Name = "textBox_biology";
+            this.textBox_biology.Size = new System.Drawing.Size(153, 22);
+            this.textBox_biology.TabIndex = 27;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(488, 216);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 16);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "информатика";
+            // 
+            // textBox_computer_science
+            // 
+            this.textBox_computer_science.Location = new System.Drawing.Point(491, 235);
+            this.textBox_computer_science.MaxLength = 3;
+            this.textBox_computer_science.Name = "textBox_computer_science";
+            this.textBox_computer_science.Size = new System.Drawing.Size(153, 22);
+            this.textBox_computer_science.TabIndex = 25;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(329, 216);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 16);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "история";
+            // 
+            // textBox_history
+            // 
+            this.textBox_history.Location = new System.Drawing.Point(332, 235);
+            this.textBox_history.MaxLength = 3;
+            this.textBox_history.Name = "textBox_history";
+            this.textBox_history.Size = new System.Drawing.Size(153, 22);
+            this.textBox_history.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(170, 216);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 16);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "физика";
+            // 
+            // textBox_physic
+            // 
+            this.textBox_physic.Location = new System.Drawing.Point(173, 235);
+            this.textBox_physic.MaxLength = 3;
+            this.textBox_physic.Name = "textBox_physic";
+            this.textBox_physic.Size = new System.Drawing.Size(153, 22);
+            this.textBox_physic.TabIndex = 21;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(488, 173);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "общество";
+            // 
+            // textBox_social_science
+            // 
+            this.textBox_social_science.Location = new System.Drawing.Point(491, 192);
+            this.textBox_social_science.MaxLength = 3;
+            this.textBox_social_science.Name = "textBox_social_science";
+            this.textBox_social_science.Size = new System.Drawing.Size(153, 22);
+            this.textBox_social_science.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(329, 173);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 16);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "математика";
+            // 
+            // textBox_math
+            // 
+            this.textBox_math.Location = new System.Drawing.Point(332, 192);
+            this.textBox_math.MaxLength = 3;
+            this.textBox_math.Name = "textBox_math";
+            this.textBox_math.Size = new System.Drawing.Size(153, 22);
+            this.textBox_math.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(170, 173);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 16);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "русский";
+            // 
+            // textBox_russian
+            // 
+            this.textBox_russian.Location = new System.Drawing.Point(173, 192);
+            this.textBox_russian.MaxLength = 3;
+            this.textBox_russian.Name = "textBox_russian";
+            this.textBox_russian.Size = new System.Drawing.Size(153, 22);
+            this.textBox_russian.TabIndex = 15;
             // 
             // checkBox_Orphan
             // 
@@ -306,242 +519,6 @@
             this.label_id.TabIndex = 0;
             this.label_id.Text = "ID: ";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.button2);
-            this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 397);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "факультет";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(762, 338);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(260, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "убрать";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(168, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "добавить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 24);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(171, 312);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(85, 16);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "литература";
-            // 
-            // textBox_literature
-            // 
-            this.textBox_literature.Location = new System.Drawing.Point(174, 331);
-            this.textBox_literature.MaxLength = 3;
-            this.textBox_literature.Name = "textBox_literature";
-            this.textBox_literature.Size = new System.Drawing.Size(153, 22);
-            this.textBox_literature.TabIndex = 33;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(330, 312);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(128, 16);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "иностранный язык";
-            // 
-            // textBox_foreign_language
-            // 
-            this.textBox_foreign_language.Location = new System.Drawing.Point(333, 331);
-            this.textBox_foreign_language.MaxLength = 3;
-            this.textBox_foreign_language.Name = "textBox_foreign_language";
-            this.textBox_foreign_language.Size = new System.Drawing.Size(153, 22);
-            this.textBox_foreign_language.TabIndex = 35;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(488, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 16);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "география";
-            // 
-            // textBox_geography
-            // 
-            this.textBox_geography.Location = new System.Drawing.Point(491, 285);
-            this.textBox_geography.MaxLength = 3;
-            this.textBox_geography.Name = "textBox_geography";
-            this.textBox_geography.Size = new System.Drawing.Size(153, 22);
-            this.textBox_geography.TabIndex = 31;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(329, 266);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(45, 16);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "химия";
-            // 
-            // textBox_chemistry
-            // 
-            this.textBox_chemistry.Location = new System.Drawing.Point(332, 285);
-            this.textBox_chemistry.MaxLength = 3;
-            this.textBox_chemistry.Name = "textBox_chemistry";
-            this.textBox_chemistry.Size = new System.Drawing.Size(153, 22);
-            this.textBox_chemistry.TabIndex = 29;
-            // 
-            // textBox_biology
-            // 
-            this.textBox_biology.Location = new System.Drawing.Point(173, 285);
-            this.textBox_biology.MaxLength = 3;
-            this.textBox_biology.Name = "textBox_biology";
-            this.textBox_biology.Size = new System.Drawing.Size(153, 22);
-            this.textBox_biology.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(170, 266);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(68, 16);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "биология";
-            // 
-            // textBox_history
-            // 
-            this.textBox_history.Location = new System.Drawing.Point(332, 235);
-            this.textBox_history.MaxLength = 3;
-            this.textBox_history.Name = "textBox_history";
-            this.textBox_history.Size = new System.Drawing.Size(153, 22);
-            this.textBox_history.TabIndex = 23;
-            // 
-            // textBox_physic
-            // 
-            this.textBox_physic.Location = new System.Drawing.Point(173, 235);
-            this.textBox_physic.MaxLength = 3;
-            this.textBox_physic.Name = "textBox_physic";
-            this.textBox_physic.Size = new System.Drawing.Size(153, 22);
-            this.textBox_physic.TabIndex = 21;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(170, 216);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 16);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "физика";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 216);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 16);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "история";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(488, 216);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 16);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "информатика";
-            // 
-            // textBox_computer_science
-            // 
-            this.textBox_computer_science.Location = new System.Drawing.Point(491, 235);
-            this.textBox_computer_science.MaxLength = 3;
-            this.textBox_computer_science.Name = "textBox_computer_science";
-            this.textBox_computer_science.Size = new System.Drawing.Size(153, 22);
-            this.textBox_computer_science.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(488, 173);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 16);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "общество";
-            // 
-            // textBox_social_science
-            // 
-            this.textBox_social_science.Location = new System.Drawing.Point(491, 192);
-            this.textBox_social_science.MaxLength = 3;
-            this.textBox_social_science.Name = "textBox_social_science";
-            this.textBox_social_science.Size = new System.Drawing.Size(153, 22);
-            this.textBox_social_science.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(329, 173);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 16);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "математика";
-            // 
-            // textBox_math
-            // 
-            this.textBox_math.Location = new System.Drawing.Point(332, 192);
-            this.textBox_math.MaxLength = 3;
-            this.textBox_math.Name = "textBox_math";
-            this.textBox_math.Size = new System.Drawing.Size(153, 22);
-            this.textBox_math.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(170, 173);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 16);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "русский";
-            // 
-            // textBox_russian
-            // 
-            this.textBox_russian.Location = new System.Drawing.Point(173, 192);
-            this.textBox_russian.MaxLength = 3;
-            this.textBox_russian.Name = "textBox_russian";
-            this.textBox_russian.Size = new System.Drawing.Size(153, 22);
-            this.textBox_russian.TabIndex = 15;
-            // 
             // editApplicant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -554,8 +531,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -569,7 +544,6 @@
         private System.Windows.Forms.TextBox textBox_name;
         private System.Windows.Forms.TextBox textBox_surname;
         private System.Windows.Forms.Label label_id;
-        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox_dop_com;
@@ -577,10 +551,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label_sum;
         private System.Windows.Forms.Button button_set_exams;
         private System.Windows.Forms.Button button4;
@@ -609,5 +579,8 @@
         private System.Windows.Forms.TextBox textBox_math;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox_russian;
+        private System.Windows.Forms.Button button_delete_applicant_facultie;
+        private System.Windows.Forms.Button button_add_applicant_facultie;
+        private System.Windows.Forms.ComboBox comboBox_facultie;
     }
 }

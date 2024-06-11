@@ -58,6 +58,8 @@ namespace project_trotsa
                     Convert.ToUInt32(textBox_physic.Text) + Convert.ToUInt32(textBox_history.Text) + Convert.ToUInt32(textBox_computer_science.Text) + Convert.ToUInt32(textBox_biology.Text) + Convert.ToUInt32(textBox_chemistry.Text) +
                     Convert.ToUInt32(textBox_geography.Text) + Convert.ToUInt32(textBox_literature.Text) + Convert.ToUInt32(textBox_foreign_language.Text);
             label_sum.Text = exam_sum.ToString();
+
+            comboBox_facultie.DataSource = obj_edit_db.load_all_faculties_adm();
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -89,6 +91,28 @@ namespace project_trotsa
                 {
                     MessageBox.Show(ex.Message, "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void button_add_applicant_facultie_Click(object sender, EventArgs e)
+        {
+            if (obj_edit_db.applicant_exists_facultie(id, comboBox_facultie.Text))
+            {
+                MessageBox.Show("Заявление на имя абитуриента на данную специальность уже подана", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                obj_edit_db.add_applicant_to_facultie(id, comboBox_facultie.Text);
+                MessageBox.Show("Успешно", "Специальность", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button_delete_applicant_facultie_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Вы уверены?", "Удаление", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                obj_edit_db.delete_applicant_to_facultie(id, comboBox_facultie.Text);
             }
         }
 

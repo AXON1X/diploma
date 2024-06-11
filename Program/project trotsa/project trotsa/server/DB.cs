@@ -91,7 +91,7 @@ namespace project_trotsa.server
         public void set_exam_info_pd(string id, uint score)
         {
             open_conn();
-            cmd = "UPDATE `trotsa`.`personal_data_applicant` SET `exam scores` = \'"+score+"\' WHERE (`ID_applicant` = \'"+id+"\');";
+            cmd = "UPDATE `trotsa`.`personal_data_applicant` SET `exam_scores` = \'"+score+"\' WHERE (`ID_applicant` = \'"+id+"\');";
             sql = new MySqlCommand(cmd, get_conn());
             sql.ExecuteNonQuery();
             close_conn();
@@ -407,6 +407,44 @@ namespace project_trotsa.server
             sql = new MySqlCommand(cmd, get_conn());
             sql.ExecuteNonQuery();
             close_conn();
+        }
+
+        public void add_applicant_to_facultie(string id, string code_facultie)
+        {
+            open_conn();
+            cmd = "call trotsa.add_applicant_facultie(\'"+id+"\', \'"+code_facultie+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public void delete_applicant_to_facultie(string id, string code_facultie)
+        {
+            open_conn();
+            cmd = "call trotsa.delete_applicant_from_facultie(\'"+id+"\', \'"+code_facultie+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public bool applicant_exists_facultie(string id, string code_facultie)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "select trotsa.exists_applicants_in_facultie(\'"+code_facultie+"\', \'"+id+"\');";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            if (Convert.ToBoolean(dt.Rows[0][0]))
+            {
+                cmd = "";
+                adapter.SelectCommand = null;
+                dt.Clear();
+                dt.Columns.Clear();
+                return true;
+            }
+            cmd = "";
+            adapter.SelectCommand = null;
+            dt.Clear();
+            dt.Columns.Clear();
+            return false;
         }
     }
 }
