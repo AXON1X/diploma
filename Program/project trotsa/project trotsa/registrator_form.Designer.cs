@@ -35,9 +35,7 @@
             this.button_ten_next = new System.Windows.Forms.Button();
             this.comboBox_Counter = new System.Windows.Forms.ComboBox();
             this.comboBox_faculties = new System.Windows.Forms.ComboBox();
-            this.button_add_facultie = new System.Windows.Forms.Button();
             this.label_facultie = new System.Windows.Forms.Label();
-            this.button_edit_facultie = new System.Windows.Forms.Button();
             this.button_delete_applicants = new System.Windows.Forms.Button();
             this.button_create_applicant = new System.Windows.Forms.Button();
             this.button_change_data = new System.Windows.Forms.Button();
@@ -56,6 +54,7 @@
             this.DGV_Applicants.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Applicants.Size = new System.Drawing.Size(424, 362);
             this.DGV_Applicants.TabIndex = 0;
+            this.DGV_Applicants.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Applicants_CellDoubleClick);
             // 
             // label_counter_dgv
             // 
@@ -117,19 +116,9 @@
             this.comboBox_faculties.FormattingEnabled = true;
             this.comboBox_faculties.Location = new System.Drawing.Point(442, 42);
             this.comboBox_faculties.Name = "comboBox_faculties";
-            this.comboBox_faculties.Size = new System.Drawing.Size(121, 24);
+            this.comboBox_faculties.Size = new System.Drawing.Size(192, 24);
             this.comboBox_faculties.TabIndex = 7;
             this.comboBox_faculties.SelectedValueChanged += new System.EventHandler(this.comboBox_faculties_SelectedValueChanged);
-            // 
-            // button_add_facultie
-            // 
-            this.button_add_facultie.Location = new System.Drawing.Point(570, 42);
-            this.button_add_facultie.Name = "button_add_facultie";
-            this.button_add_facultie.Size = new System.Drawing.Size(24, 24);
-            this.button_add_facultie.TabIndex = 8;
-            this.button_add_facultie.Text = "+";
-            this.button_add_facultie.UseVisualStyleBackColor = true;
-            this.button_add_facultie.Click += new System.EventHandler(this.button_add_facultie_Click);
             // 
             // label_facultie
             // 
@@ -139,16 +128,6 @@
             this.label_facultie.Size = new System.Drawing.Size(78, 16);
             this.label_facultie.TabIndex = 9;
             this.label_facultie.Text = "факультет";
-            // 
-            // button_edit_facultie
-            // 
-            this.button_edit_facultie.Location = new System.Drawing.Point(600, 41);
-            this.button_edit_facultie.Name = "button_edit_facultie";
-            this.button_edit_facultie.Size = new System.Drawing.Size(35, 24);
-            this.button_edit_facultie.TabIndex = 10;
-            this.button_edit_facultie.Text = "...";
-            this.button_edit_facultie.UseVisualStyleBackColor = true;
-            this.button_edit_facultie.Click += new System.EventHandler(this.button_edit_facultie_Click);
             // 
             // button_delete_applicants
             // 
@@ -178,6 +157,7 @@
             this.button_change_data.TabIndex = 13;
             this.button_change_data.Text = "Изменить";
             this.button_change_data.UseVisualStyleBackColor = true;
+            this.button_change_data.Click += new System.EventHandler(this.button_change_data_Click);
             // 
             // registrator_form
             // 
@@ -187,9 +167,7 @@
             this.Controls.Add(this.button_change_data);
             this.Controls.Add(this.button_create_applicant);
             this.Controls.Add(this.button_delete_applicants);
-            this.Controls.Add(this.button_edit_facultie);
             this.Controls.Add(this.label_facultie);
-            this.Controls.Add(this.button_add_facultie);
             this.Controls.Add(this.comboBox_faculties);
             this.Controls.Add(this.comboBox_Counter);
             this.Controls.Add(this.button_ten_next);
@@ -216,9 +194,7 @@
         private System.Windows.Forms.Button button_ten_next;
         private System.Windows.Forms.ComboBox comboBox_Counter;
         private System.Windows.Forms.ComboBox comboBox_faculties;
-        private System.Windows.Forms.Button button_add_facultie;
         private System.Windows.Forms.Label label_facultie;
-        private System.Windows.Forms.Button button_edit_facultie;
         private System.Windows.Forms.Button button_delete_applicants;
         private System.Windows.Forms.Button button_create_applicant;
         private System.Windows.Forms.Button button_change_data;

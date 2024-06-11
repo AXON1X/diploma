@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Utilities.Collections;
 using project_trotsa.JSON;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace project_trotsa.server
 {
@@ -35,6 +37,64 @@ namespace project_trotsa.server
             dt.Columns.Clear();
             conn = null;
             Server_Data.clear();
+        }
+
+        public DataTable get_fio(string id)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT surname, `name`, patronymic FROM trotsa.applicants where ID_applicant = \'"+id+"\';";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable get_dop_info(string id)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT * FROM trotsa.personal_data_applicant where ID_applicant = \'"+id+"\';";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+        public DataTable get_exam_info(string id)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT * FROM trotsa.exam_applicants where ID_applicant = \'"+id+"\';";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+        public void set_dop_info(string id, bool Disability, bool Privileges, bool Orphan, string Documents_Commentary, string Commentary)
+        {
+            open_conn();
+            cmd = "UPDATE `trotsa`.`personal_data_applicant` SET `Disability` = \'"+Convert.ToInt32(Disability)+"\', `Privileges` = \'"+Convert.ToInt32(Privileges)+"\', `Orphan` = \'"+Convert.ToInt32(Orphan)+"\'," +
+                " `Documents_Commentary` = \'"+Documents_Commentary+"\', `Commentary` = \'"+Commentary+"\' WHERE (`ID_applicant` = \'"+id+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public void set_exam_info(string id, uint russian, uint math, uint social_science, uint physic, uint history, uint computer_science,
+            uint biology, uint chemistry, uint geography, uint literature, uint foreign_language)
+        {
+            open_conn();
+            cmd = "UPDATE `trotsa`.`exam_applicants` SET `russian` = \'"+russian+"\', `math` = \'"+math+"\', `social_science` = \'"+social_science+"\'," +
+                " `physic` = \'"+physic+"\', `history` = \'"+history+"\', `computer_science` = \'"+computer_science+"\', " +
+                "`biology` = \'"+biology+"\', `chemistry` = \'"+chemistry+"\', `geography` = \'"+geography+"\', " +
+                "`literature` = \'"+literature+"\', `foreign_language` = \'"+foreign_language+"\' WHERE (`id` = \'"+id+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public void set_exam_info_pd(string id, uint score)
+        {
+            open_conn();
+            cmd = "UPDATE `trotsa`.`personal_data_applicant` SET `exam scores` = \'"+score+"\' WHERE (`ID_applicant` = \'"+id+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
         }
         public MySqlConnection get_conn()
         {
@@ -128,6 +188,28 @@ namespace project_trotsa.server
         {
             open_conn();
             cmd = "call `trotsa`.`add_applicant`(\'"+name+"\',\'"+surname+"\',\'"+patronymic+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
+        }
+        public DataTable get_exam_requirements(string code_facultie)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "call trotsa.get_exam_requirements(\'"+code_facultie+"\');";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
+        public void update_requirements_exam(string code_facultie_param, bool russian, bool math, bool social_science, bool physic,
+            bool history, bool computer_science, bool biology, bool chemistry, bool geography, bool literature, bool foreign_language)
+
+        {
+            open_conn();
+            cmd = "call trotsa.change_requirements_exam_faculty(\'"+code_facultie_param+"\', \'"+Convert.ToInt32(russian)+"\', \'"+Convert.ToInt32(math)+"\', \'"+Convert.ToInt32(social_science)+"\'," +
+                " \'"+Convert.ToInt32(physic)+"\', \'"+Convert.ToInt32(history)+"\', \'"+Convert.ToInt32(computer_science)+"\'," +
+                " \'"+Convert.ToInt32(biology)+"\', \'"+Convert.ToInt32(chemistry)+"\'," +
+                " \'"+Convert.ToInt32(geography)+"\', \'"+Convert.ToInt32(literature)+"\', \'"+Convert.ToInt32(foreign_language)+"\');";
             sql = new MySqlCommand(cmd, get_conn());
             sql.ExecuteNonQuery();
             close_conn();
@@ -302,6 +384,29 @@ namespace project_trotsa.server
                 faculties_list.Add(dt.Rows[i][0].ToString());
             }
             return faculties_list;
+        }
+        public List<string> load_all_faculties_adm()
+        {
+            List<string> faculties_list = new List<string>();
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT code_facultie FROM faculties;";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                faculties_list.Add(dt.Rows[i][0].ToString());
+            }
+            return faculties_list;
+        }
+
+        public void edit_fio(string id, string surname, string name, string patronymic)
+        {
+            open_conn();
+            cmd = "call trotsa.edit_fio_applicants(\'"+id+"\', \'"+surname+"\', \'"+name+"\', \'"+patronymic+"\');";
+            sql = new MySqlCommand(cmd, get_conn());
+            sql.ExecuteNonQuery();
+            close_conn();
         }
     }
 }

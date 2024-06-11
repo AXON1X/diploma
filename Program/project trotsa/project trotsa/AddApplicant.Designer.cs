@@ -109,7 +109,7 @@
             this.Controls.Add(this.textBox_surname_edit);
             this.Name = "AddApplicant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddApplicant";
+            this.Text = "Добавить";
             this.ResumeLayout(false);
             this.PerformLayout();
 

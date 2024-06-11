@@ -24,13 +24,14 @@ namespace project_trotsa
         {
             InitializeComponent();
             oldForm = previous;
-            DGV_Applicants.AllowUserToAddRows = false;
+            
             obj_registrator_db = new DB(files_work.read_server_data_file());
             comboBox_Counter.SelectedIndex = 0;
             updateComboBox_facultie();
             applicants = obj_registrator_db.load_all_applicants(counter, counter+Convert.ToInt32(comboBox_Counter.Text));
             label_counter_dgv.Text += applicants.Rows.Count.ToString();
             set_applicants();
+            DGV_Applicants.AllowUserToAddRows = false;
         }
 
         public void updateComboBox_facultie()
@@ -162,6 +163,21 @@ namespace project_trotsa
             addApplicant.Show();
 
             addApplicant.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
+        }
+
+        private void button_change_data_Click(object sender, EventArgs e)
+        {
+            editApplicant addApplicant = new editApplicant(DGV_Applicants.SelectedRows[0].Cells[0].Value.ToString());
+            addApplicant.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
+            addApplicant.Show();
+        }
+
+        private void DGV_Applicants_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editApplicant addApplicant = new editApplicant(DGV_Applicants.SelectedRows[0].Cells[0].Value.ToString());
+            addApplicant.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
+            addApplicant.Show();
+
         }
     }
 }

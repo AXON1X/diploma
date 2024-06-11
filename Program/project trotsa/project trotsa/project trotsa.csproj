@@ -119,6 +119,12 @@
     <Compile Include="administratorForm.Designer.cs">
       <DependentUpon>administratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="editApplicant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editApplicant.Designer.cs">
+      <DependentUpon>editApplicant.cs</DependentUpon>
+    </Compile>
     <Compile Include="facultie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="administratorForm.resx">
       <DependentUpon>administratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editApplicant.resx">
+      <DependentUpon>editApplicant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="facultie.resx">
       <DependentUpon>facultie.cs</DependentUpon>

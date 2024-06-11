@@ -50,3 +50,4 @@ D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trot
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.facultie.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.administratorForm.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.AddApplicant.resources
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.editApplicant.resources
