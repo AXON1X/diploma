@@ -67,6 +67,17 @@ namespace project_trotsa.server
             adapter.Fill(dt);
             return dt;
         }
+
+        public DataTable search_applicants(string str)
+        {
+            dt.Clear();
+            dt.Columns.Clear();
+            cmd = "SELECT ID_applicant as  `Идентификатор`, surname as `Фамилия`, `name` as `Имя`, patronymic as `Отчество` FROM trotsa.applicants " +
+                "where ID_applicant like '%"+str+"%' or surname like '%"+str+"%' or `name` like  '%"+str+"%' or patronymic like '%"+str+"%';";
+            adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
+            adapter.Fill(dt);
+            return dt;
+        }
         public string get_current_facultie_applicant(string id_applicant)
         {
             dt.Clear();

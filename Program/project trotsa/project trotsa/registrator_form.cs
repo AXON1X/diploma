@@ -80,6 +80,7 @@ namespace project_trotsa
 
         private void button_to_start_list_Click(object sender, EventArgs e)
         {
+            textBox_search.Text = "";
             counter=0;
             applicants = obj_registrator_db.load_all_applicants(counter, Convert.ToInt32(comboBox_Counter.Text));
             set_applicants();
@@ -177,7 +178,11 @@ namespace project_trotsa
             editApplicant addApplicant = new editApplicant(DGV_Applicants.SelectedRows[0].Cells[0].Value.ToString());
             addApplicant.FormClosed += new FormClosedEventHandler(facultie_FormClosed);
             addApplicant.Show();
+        }
 
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            DGV_Applicants.DataSource = obj_registrator_db.search_applicants(textBox_search.Text);
         }
     }
 }

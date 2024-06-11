@@ -39,6 +39,9 @@
             this.button_delete_applicants = new System.Windows.Forms.Button();
             this.button_create_applicant = new System.Windows.Forms.Button();
             this.button_change_data = new System.Windows.Forms.Button();
+            this.textBox_search = new System.Windows.Forms.TextBox();
+            this.button_clear_search = new System.Windows.Forms.Button();
+            this.button_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Applicants)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +117,7 @@
             // comboBox_faculties
             // 
             this.comboBox_faculties.FormattingEnabled = true;
-            this.comboBox_faculties.Location = new System.Drawing.Point(442, 42);
+            this.comboBox_faculties.Location = new System.Drawing.Point(441, 141);
             this.comboBox_faculties.Name = "comboBox_faculties";
             this.comboBox_faculties.Size = new System.Drawing.Size(192, 24);
             this.comboBox_faculties.TabIndex = 7;
@@ -123,7 +126,7 @@
             // label_facultie
             // 
             this.label_facultie.AutoSize = true;
-            this.label_facultie.Location = new System.Drawing.Point(439, 23);
+            this.label_facultie.Location = new System.Drawing.Point(438, 122);
             this.label_facultie.Name = "label_facultie";
             this.label_facultie.Size = new System.Drawing.Size(78, 16);
             this.label_facultie.TabIndex = 9;
@@ -141,7 +144,7 @@
             // 
             // button_create_applicant
             // 
-            this.button_create_applicant.Location = new System.Drawing.Point(443, 72);
+            this.button_create_applicant.Location = new System.Drawing.Point(442, 171);
             this.button_create_applicant.Name = "button_create_applicant";
             this.button_create_applicant.Size = new System.Drawing.Size(192, 56);
             this.button_create_applicant.TabIndex = 12;
@@ -151,7 +154,7 @@
             // 
             // button_change_data
             // 
-            this.button_change_data.Location = new System.Drawing.Point(442, 134);
+            this.button_change_data.Location = new System.Drawing.Point(441, 233);
             this.button_change_data.Name = "button_change_data";
             this.button_change_data.Size = new System.Drawing.Size(192, 56);
             this.button_change_data.TabIndex = 13;
@@ -159,11 +162,41 @@
             this.button_change_data.UseVisualStyleBackColor = true;
             this.button_change_data.Click += new System.EventHandler(this.button_change_data_Click);
             // 
+            // textBox_search
+            // 
+            this.textBox_search.Location = new System.Drawing.Point(443, 38);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.Size = new System.Drawing.Size(191, 22);
+            this.textBox_search.TabIndex = 14;
+            // 
+            // button_clear_search
+            // 
+            this.button_clear_search.Location = new System.Drawing.Point(443, 67);
+            this.button_clear_search.Name = "button_clear_search";
+            this.button_clear_search.Size = new System.Drawing.Size(75, 23);
+            this.button_clear_search.TabIndex = 15;
+            this.button_clear_search.Text = "стереть";
+            this.button_clear_search.UseVisualStyleBackColor = true;
+            this.button_clear_search.Click += new System.EventHandler(this.button_to_start_list_Click);
+            // 
+            // button_search
+            // 
+            this.button_search.Location = new System.Drawing.Point(560, 67);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(75, 23);
+            this.button_search.TabIndex = 16;
+            this.button_search.Text = "найти";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
             // registrator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.button_search);
+            this.Controls.Add(this.button_clear_search);
+            this.Controls.Add(this.textBox_search);
             this.Controls.Add(this.button_change_data);
             this.Controls.Add(this.button_create_applicant);
             this.Controls.Add(this.button_delete_applicants);
@@ -198,5 +231,8 @@
         private System.Windows.Forms.Button button_delete_applicants;
         private System.Windows.Forms.Button button_create_applicant;
         private System.Windows.Forms.Button button_change_data;
+        private System.Windows.Forms.TextBox textBox_search;
+        private System.Windows.Forms.Button button_clear_search;
+        private System.Windows.Forms.Button button_search;
     }
 }
