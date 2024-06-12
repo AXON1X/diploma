@@ -120,7 +120,7 @@ namespace project_trotsa
         {
             if(math.Checked)
             {
-                if(counting() == 6)
+                if(counting() == 5)
                 {
                     math.Checked = false;
                 }
@@ -137,15 +137,21 @@ namespace project_trotsa
 
         private void button_change_Click(object sender, EventArgs e)
         {
-            if(counting() > 5)
+            if(counting() > 4)
             {
+                MessageBox.Show("Нельзя выбрать больше 4 дисциплин", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else if (counting() <= 5)
+            else if (counting() <= 4)
             {
                 obj_adm_db.update_requirements_exam(comboBox_faculties.Text, russian.Checked, math.Checked, social_science.Checked,
                     physic.Checked, history.Checked, computer_science.Checked, biology.Checked, chemistry.Checked, geography.Checked, literature.Checked, foreign_language.Checked);
                 MessageBox.Show("Изменения внесены", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(counting() == 0)
+            {
+                MessageBox.Show("Ничего не выбрано", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
 
@@ -153,7 +159,7 @@ namespace project_trotsa
         {
             if (biology.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     biology.Checked = false;
                 }
@@ -172,7 +178,7 @@ namespace project_trotsa
         {
             if (physic.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     physic.Checked = false;
                 }
@@ -191,7 +197,7 @@ namespace project_trotsa
         {
             if (russian.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     russian.Checked = false;
                 }
@@ -210,7 +216,7 @@ namespace project_trotsa
         {
             if (geography.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     geography.Checked = false;
                 }
@@ -229,7 +235,7 @@ namespace project_trotsa
         {
             if (social_science.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     social_science.Checked = false;
                 }
@@ -248,7 +254,7 @@ namespace project_trotsa
         {
             if (chemistry.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     chemistry.Checked = false;
                 }
@@ -267,7 +273,7 @@ namespace project_trotsa
         {
             if (history.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     history.Checked = false;
                 }
@@ -286,7 +292,7 @@ namespace project_trotsa
         {
             if (literature.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     literature.Checked = false;
                 }
@@ -305,7 +311,7 @@ namespace project_trotsa
         {
             if (computer_science.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     computer_science.Checked = false;
                 }
@@ -324,7 +330,7 @@ namespace project_trotsa
         {
             if (foreign_language.Checked)
             {
-                if (counting() == 6)
+                if (counting() == 5)
                 {
                     foreign_language.Checked = false;
                 }
