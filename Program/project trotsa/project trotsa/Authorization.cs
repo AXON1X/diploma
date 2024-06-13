@@ -15,7 +15,7 @@ using System.Security.Principal;
 
 namespace project_trotsa
 {
-    public partial class Form1 : Form
+    public partial class Authorization : Form
     {
         server_data Server_Data;
         registar registar;
@@ -74,7 +74,7 @@ namespace project_trotsa
             registar.password = "";
             files_work.save_registar_data(registar);
         }
-        public Form1()
+        public Authorization()
         {
             InitializeComponent();
 

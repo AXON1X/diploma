@@ -77,6 +77,7 @@
             // 
             // comboBox_faculties
             // 
+            this.comboBox_faculties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_faculties.FormattingEnabled = true;
             this.comboBox_faculties.Location = new System.Drawing.Point(12, 26);
             this.comboBox_faculties.Name = "comboBox_faculties";

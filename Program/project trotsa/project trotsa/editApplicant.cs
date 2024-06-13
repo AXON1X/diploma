@@ -62,6 +62,7 @@ namespace project_trotsa
 
             comboBox_facultie.DataSource = obj_edit_db.load_all_faculties_adm();
             block_textBox_exams();
+            label_facultie.Text += code_facultie_applicant;
         }
         private void button4_Click(object sender, EventArgs e)
         {
@@ -114,9 +115,9 @@ namespace project_trotsa
                     exam_sum = Convert.ToUInt32(textBox_russian.Text) + Convert.ToUInt32(textBox_math.Text) + Convert.ToUInt32(textBox_social_science.Text) +
                     Convert.ToUInt32(textBox_physic.Text) + Convert.ToUInt32(textBox_history.Text) + Convert.ToUInt32(textBox_computer_science.Text) + Convert.ToUInt32(textBox_biology.Text) + Convert.ToUInt32(textBox_chemistry.Text) +
                     Convert.ToUInt32(textBox_geography.Text) + Convert.ToUInt32(textBox_literature.Text) + Convert.ToUInt32(textBox_foreign_language.Text);
-                    if(exam_sum > 300)
+                    if(exam_sum > 400)
                     {
-                        MessageBox.Show($"Сумма баллов не должна превышать значение 300\nВведённая сумма {exam_sum}", "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Сумма баллов не должна превышать значение 400\nВведённая сумма {exam_sum}", "ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -146,7 +147,7 @@ namespace project_trotsa
                 MessageBox.Show("Успешно", "Специальность", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 code_facultie_applicant = obj_edit_db.get_current_facultie_applicant(id);
                 block_textBox_exams();
-                
+                label_facultie.Text += code_facultie_applicant;
             }
         }
 
@@ -173,6 +174,7 @@ namespace project_trotsa
                 textBox_geography.ReadOnly = true;
                 textBox_literature.ReadOnly = true;
                 textBox_foreign_language.ReadOnly = true;
+                label_facultie.Text = "специальность:";
             }
         }
 

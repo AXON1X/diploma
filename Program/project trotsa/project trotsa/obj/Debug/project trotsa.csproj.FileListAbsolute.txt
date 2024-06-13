@@ -39,7 +39,6 @@ D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Text.
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\bin\Debug\System.ValueTuple.xml
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.AssemblyReference.cache
-D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.Form1.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.Properties.Resources.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.GenerateResource.cache
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project trotsa.csproj.CoreCompileInputs.cache
@@ -51,3 +50,4 @@ D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trot
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.administratorForm.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.AddApplicant.resources
 D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.editApplicant.resources
+D:\VEP Diploma Work\Program\project trotsa\project trotsa\obj\Debug\project_trotsa.Authorization.resources

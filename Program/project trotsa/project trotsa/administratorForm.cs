@@ -56,17 +56,36 @@ namespace project_trotsa
             dt.Clear();
             comboBox_faculties.DataSource = obj_adm_db.load_all_faculties_adm();
             dt = obj_adm_db.get_exam_requirements(comboBox_faculties.Text);
-            russian.Checked = Convert.ToBoolean(dt.Rows[0][0]);
-            math.Checked = Convert.ToBoolean(dt.Rows[0][1]);
-            social_science.Checked = Convert.ToBoolean(dt.Rows[0][2]);
-            physic.Checked = Convert.ToBoolean(dt.Rows[0][3]);
-            history.Checked = Convert.ToBoolean(dt.Rows[0][4]);
-            computer_science.Checked = Convert.ToBoolean(dt.Rows[0][5]);
-            biology.Checked = Convert.ToBoolean(dt.Rows[0][6]);
-            chemistry.Checked = Convert.ToBoolean(dt.Rows[0][7]);
-            geography.Checked = Convert.ToBoolean(dt.Rows[0][8]);
-            literature.Checked = Convert.ToBoolean(dt.Rows[0][9]);
-            foreign_language.Checked = Convert.ToBoolean(dt.Rows[0][10]);
+            try
+            {
+                russian.Checked = Convert.ToBoolean(dt.Rows[0][0]);
+                math.Checked = Convert.ToBoolean(dt.Rows[0][1]);
+                social_science.Checked = Convert.ToBoolean(dt.Rows[0][2]);
+                physic.Checked = Convert.ToBoolean(dt.Rows[0][3]);
+                history.Checked = Convert.ToBoolean(dt.Rows[0][4]);
+                computer_science.Checked = Convert.ToBoolean(dt.Rows[0][5]);
+                biology.Checked = Convert.ToBoolean(dt.Rows[0][6]);
+                chemistry.Checked = Convert.ToBoolean(dt.Rows[0][7]);
+                geography.Checked = Convert.ToBoolean(dt.Rows[0][8]);
+                literature.Checked = Convert.ToBoolean(dt.Rows[0][9]);
+                foreign_language.Checked = Convert.ToBoolean(dt.Rows[0][10]);
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex.Message);
+                russian.Checked = false;
+                math.Checked = false;
+                social_science.Checked = false;
+                physic.Checked = false;
+                history.Checked = false;
+                computer_science.Checked = false;
+                biology.Checked = false;
+                chemistry.Checked = false;
+                geography.Checked = false;
+                literature.Checked = false;
+                foreign_language.Checked = false;
+            }
+            
             count = 0;
         }
 

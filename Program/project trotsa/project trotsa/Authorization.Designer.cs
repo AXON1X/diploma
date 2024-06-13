@@ -1,6 +1,6 @@
 ﻿namespace project_trotsa
 {
-    partial class Form1
+    partial class Authorization
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -74,7 +74,7 @@
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
+            this.tabControl1.Size = new System.Drawing.Size(981, 663);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -84,7 +84,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(768, 397);
+            this.tabPage1.Size = new System.Drawing.Size(973, 634);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Главная";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.panel1.Controls.Add(this.button_authorization);
             this.panel1.Controls.Add(this.pass_EditLine_MF);
             this.panel1.Controls.Add(this.login_EditLine_MF);
-            this.panel1.Location = new System.Drawing.Point(275, 22);
+            this.panel1.Location = new System.Drawing.Point(377, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(206, 284);
             this.panel1.TabIndex = 1;
@@ -167,7 +167,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(768, 397);
+            this.tabPage2.Size = new System.Drawing.Size(973, 634);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Настройки";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             this.OptionsTabPage.Multiline = true;
             this.OptionsTabPage.Name = "OptionsTabPage";
             this.OptionsTabPage.SelectedIndex = 0;
-            this.OptionsTabPage.Size = new System.Drawing.Size(756, 385);
+            this.OptionsTabPage.Size = new System.Drawing.Size(961, 622);
             this.OptionsTabPage.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.OptionsTabPage.TabIndex = 0;
             this.OptionsTabPage.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.OptionsTabPage_DrawItem);
@@ -209,7 +209,7 @@
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(598, 377);
+            this.tabPage4.Size = new System.Drawing.Size(803, 614);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Сервер";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             // 
             this.check_conn_button.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.check_conn_button.Location = new System.Drawing.Point(367, 7);
+            this.check_conn_button.Location = new System.Drawing.Point(572, 7);
             this.check_conn_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.check_conn_button.MaximumSize = new System.Drawing.Size(173, 76);
             this.check_conn_button.Name = "check_conn_button";
@@ -341,14 +341,16 @@
             // 
             this.errorProvider_MF.ContainerControl = this;
             // 
-            // Form1
+            // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1005, 687);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "Authorization";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
             this.tabControl1.ResumeLayout(false);

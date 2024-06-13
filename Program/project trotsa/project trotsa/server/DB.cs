@@ -526,7 +526,7 @@ namespace project_trotsa.server
             cmd = "select trotsa.search_login_registar(\'" + login + "\');";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
-            if ((bool)dt.Rows[0][0])
+            if (Convert.ToBoolean(dt.Rows[0][0]))
             {
                 return true;
             }
@@ -534,7 +534,7 @@ namespace project_trotsa.server
             {
                 return false;
             }
-            
+
         }
         public bool authorization(string set_login, string set_password)
         {
@@ -551,7 +551,7 @@ namespace project_trotsa.server
             adapter.SelectCommand= new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
             close_conn();
-            if ((bool)dt.Rows[0][0])
+            if (Convert.ToBoolean(dt.Rows[0][0]))
             {
                 return true;
             }
@@ -567,7 +567,7 @@ namespace project_trotsa.server
             cmd = "select `facultie exist`(\'"+code_facultie+"\') as `bool`;";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
-            if ((bool)dt.Rows[0][0])
+            if (Convert.ToBoolean(dt.Rows[0][0]))
             {
                 return true;
             }
@@ -583,7 +583,7 @@ namespace project_trotsa.server
             cmd = "select trotsa.IsUserAdmin(\'"+login+"\');";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
-            if ((bool)dt.Rows[0][0])
+            if (Convert.ToBoolean(dt.Rows[0][0]))
             {
                 return true;
             }
@@ -599,7 +599,7 @@ namespace project_trotsa.server
             cmd = "select trotsa.exists_applicants_in_facultie(\'"+code_facultie+"\', \'"+id+"\');";
             adapter.SelectCommand = new MySqlCommand(cmd, get_conn());
             adapter.Fill(dt);
-            if ((bool)dt.Rows[0][0])
+            if (Convert.ToBoolean(dt.Rows[0][0]))
             {
                 return true;
             }

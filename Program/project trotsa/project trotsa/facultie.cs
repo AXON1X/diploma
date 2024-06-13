@@ -66,7 +66,7 @@ namespace project_trotsa
                 return;
             }
 
-                if (this.Text != "Факультет")
+                if (this.Text != "специальность")
             {
                 if(obj_Facultie.id == textBox_code_facultie.Text && obj_Facultie.name == textBox_name_facultie.Text
                     && obj_Facultie.shrt_name == textBox_short_name.Text)
@@ -103,7 +103,7 @@ namespace project_trotsa
                 if (obj_facultie_db.facultie_exists(textBox_code_facultie.Text))
                 {
                     
-                    MessageBox.Show("Такой код уже существует!", "Факультет:ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Такой код уже существует!", "специальность:ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else 
                 {

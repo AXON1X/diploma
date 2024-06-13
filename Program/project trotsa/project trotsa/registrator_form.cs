@@ -95,11 +95,11 @@ namespace project_trotsa
         {
             if (comboBox_faculties.SelectedText == "все")
             {
-                label_facultie.Text = "Факультеты";
+                label_facultie.Text = "специальность";
             }
             else 
             {
-                label_facultie.Text = "Факультет: " + obj_registrator_db.facultie_short_name(comboBox_faculties.Text);
+                label_facultie.Text = "специальность: " + obj_registrator_db.facultie_short_name(comboBox_faculties.Text);
             }
             set_applicants();
         }

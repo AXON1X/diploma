@@ -73,6 +73,7 @@
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.textBox_surname = new System.Windows.Forms.TextBox();
             this.label_id = new System.Windows.Forms.Label();
+            this.label_facultie = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +92,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label_facultie);
             this.tabPage1.Controls.Add(this.button_delete_applicant_facultie);
             this.tabPage1.Controls.Add(this.button_add_applicant_facultie);
             this.tabPage1.Controls.Add(this.comboBox_facultie);
@@ -516,11 +518,20 @@
             // label_id
             // 
             this.label_id.AutoSize = true;
-            this.label_id.Location = new System.Drawing.Point(7, 7);
+            this.label_id.Location = new System.Drawing.Point(6, 0);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(26, 16);
             this.label_id.TabIndex = 0;
             this.label_id.Text = "ID: ";
+            // 
+            // label_facultie
+            // 
+            this.label_facultie.AutoSize = true;
+            this.label_facultie.Location = new System.Drawing.Point(6, 16);
+            this.label_facultie.Name = "label_facultie";
+            this.label_facultie.Size = new System.Drawing.Size(109, 16);
+            this.label_facultie.TabIndex = 43;
+            this.label_facultie.Text = "специальность:";
             // 
             // editApplicant
             // 
@@ -586,5 +597,6 @@
         private System.Windows.Forms.Button button_delete_applicant_facultie;
         private System.Windows.Forms.Button button_add_applicant_facultie;
         private System.Windows.Forms.ComboBox comboBox_facultie;
+        private System.Windows.Forms.Label label_facultie;
     }
 }

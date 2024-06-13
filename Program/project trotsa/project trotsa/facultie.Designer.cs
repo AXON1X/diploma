@@ -44,9 +44,9 @@
             this.label_facultie.AutoSize = true;
             this.label_facultie.Location = new System.Drawing.Point(13, 13);
             this.label_facultie.Name = "label_facultie";
-            this.label_facultie.Size = new System.Drawing.Size(84, 16);
+            this.label_facultie.Size = new System.Drawing.Size(109, 16);
             this.label_facultie.TabIndex = 0;
-            this.label_facultie.Text = "Факультет: ";
+            this.label_facultie.Text = "специальность:";
             // 
             // label2
             // 
@@ -136,7 +136,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "facultie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Факультет";
+            this.Text = "специальность";
             this.ResumeLayout(false);
             this.PerformLayout();
 
