@@ -228,7 +228,6 @@
             this.Controls.Add(this.DGV_Applicants);
             this.Name = "registrator_form";
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registrator_form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.registrator_form_FormClosing);
